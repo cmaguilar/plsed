@@ -1,0 +1,288 @@
+<!-- INTEMPLATE a integrar en el template base -->
+<TEMPLATE contenidos>
+	{BREAK resultados}
+</TEMPLATE>
+
+<TEMPLATE todo>
+		<!--========== PORTADA ===========-->
+		<div id="portada" class="" style="background-image: url({$IMGPORTADA});">
+			<span class="svg"></span>
+			<div id="filtro" class="vi-x"></div>
+			<a href="#" target="socialIFrame" id="edit-portada" class="hi-x btn-circle">
+				<i class="fa fa-pencil fa-2x"></i>
+				<div>&nbsp;&nbsp;Portada</div>
+			</a>
+			<div class="container">
+				<div id="movil-bar" class="row tx-c">
+					<div class="vi-x"><a href="#"><i class="fa fa-chevron-left fa-3x"></i></a></div>
+					<div class="vi-x"><a href="#"><i class="fa fa-heart fa-3x"></i></a></div>
+					<div id="foto" style="margin-bottom: -20px;">
+						<a href="#" target="socialIFrame" id="edit-foto" class="hidden-xs btn-circle">
+							<i class="fa fa-pencil"></i>
+							<div>&nbsp;&nbsp;Foto</div>
+						</a>
+						<!-- /img/default-seductora.png -->
+						<a href="#"><img id="f-principal" src="/static/img/nada2.png" class="img-c imgModal" data-href="{$IMGPERFIL}" style="background-image: url('{$IMGPERFIL}');"></a>
+					
+					</div>
+					<div class="vi-x"><a href="#galeria"><i class="fa fa-picture-o fa-3x"></i></a></div>
+					<div class="vi-x"><a href="#social-page"><i class="fa fa-user fa-3x"></i></a></div>
+				</div>
+
+				<div id="icons" class="fl-r hi-x">
+					<a href="#" id="instagram" class="hidden-xs btn-circle fl-l sliderbutton">
+						<i class="fa fa-instagram fa-2x"></i>
+						<div>&nbsp;Loolveth Sexxxy</div>
+					</a>
+					<a href="#" id="facebook" class="hidden-xs btn-circle fl-l sliderbutton">
+						<i class="fa fa-facebook fa-2x"></i>
+						<div>&nbsp;Loolveth Sexxxy</div>
+					</a>
+					<a href="#" id="twitter" class="hidden-xs btn-circle fl-l sliderbutton">
+						<i class="fa fa-twitter fa-2x"></i>
+						<div>&nbsp;@LoolvethSexxxy</div>
+					</a>
+
+					<label id="favory" class="hi-x btn-circle fl-l sliderbutton">
+						<input type="checkbox" autocomplete="off">
+						<i class="fa fa-heart fa-2x"></i>
+						<div>&nbsp;<span></span> favoritas</div>
+					</label>
+					<span id="chat-btn" class="hi-x btn-circle fl-l sliderbutton">
+						<i class="fa fa-comments fa-2x"></i>
+						<div>&nbsp;Chat</div>
+					</span>
+			
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="cuerpo" class="container row">
+
+			<!--========== DATOS Y FOTOS ===========-->
+			<div class="tx-c">
+				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$TELEFONO}</small></h3>
+				<a href="" target="socialIFrame" id="edit-data" class="hi-x btn-circle">
+					<i class="fa fa-pencil fa-2x"></i>
+					<div>&nbsp;&nbsp;Editar datos</div>
+				</a>
+				<div id="detalles" class="row">
+					<div>Ciudad</div><div>{$CIUDAD}</div>
+					{$EDAD}
+					{$PESO}
+					{$ESTATURA}
+					{$MEDIDAS}
+					{$VIAJES}
+					{$IDIOMAS}
+					{$HORARIO}
+					{$TELEFONO}
+					{$WEBCHK}
+				</div>
+				
+				<div id="galeria">
+					<a href="" target="socialIFrame" id="edit-gale" class="hi-x btn-circle">
+						<i class="fa fa-pencil fa-2x"></i>
+						<div>&nbsp;&nbsp;Galería</div>
+					</a>
+					<div id="misfotos">
+						{$FOTOGAL}
+					</div>
+					<div id="sinfotos">
+						<i class="fa fa-picture-o fa-5x"></i>
+						<p><b>Sin fotos que mostrar</b></p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<!--========== CONTENEDOR DEL IFRAME DEL PANEL ===========-->
+			<div id="socialIframe"><!--<iframe src="" name="socialIFrame"></iframe> PARA QUE SE MUESTRE LA PAGINA SOCIAL ESTE DIV DEBE ESTAR VACIO --></div>
+
+			<!--========== PARTE SOCIAL ===========-->
+			<div id="profileFrame">
+
+				<div id="social-page">
+
+					<!--========== INPUT PARA ESCRIBIR UNA PUBLICACION ===========-->
+					<div id="publicador" class="media">
+						<div class="media-left">
+							<img class="think" src="/static/img/think.png">
+							<img class="media-object img-c" src="/static/img/nada2.png" style="background-image: url({$IMGPERFIL});">
+						</div>
+						<div class="media-body">
+							<div id="inputPublish" contenteditable="true"></div>
+							<button id="buttonPublish" class="btn btn-default fl-r" type="button"><i class="fa fa-pencil-square-o fa-2x" style="vertical-align: bottom;"></i>&nbsp;&nbsp;Publicar</button>
+						</div>
+					</div>
+
+					<!--========== PUBLICACION ===========-->
+					<div class="media">
+
+						<div class="media-left">
+							<img class="think" src="/static/img/think.png">
+							<a href="#">
+								<img class="media-object img-c" src="/static/img/nada2.png" style="background-image: url({$IMGPERFIL});">
+							</a>
+						</div>
+
+						<div class="media-body">
+							<div class="deleteNotification tool-tip">
+								<i class="fa fa-times"></i>
+								<div class="tool-msj"><div>Eliminar</div></div>
+							</div>
+							<h5 class="media-heading">Lorena Sexyy<small>26 jun.</small></h5>
+							<div class="publicacion">
+								<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<div class="img imgModal" data-href="/static/img/certi.jpg" style="background-image: url(/img/certi.jpg)"></div>
+							</div>
+							<input id="pb12345" class="messagesTg" type="checkbox" />
+							<div class="buttons">
+								<label for="pb12345" class="ver-com tool-tip">
+									<span class="fa fa-comment-o fa-2x"></span><span>35</span>
+									<div class="tool-msj"><div>Ver comentarios</div></div>
+								</label>
+								<label class="toggle-btn tool-tip">
+									<input type="checkbox">
+									<span class="fa shrimp"></span><span>12</span>
+									<div class="tool-msj"><div>Dar beso</div></div>
+								</label>
+							</div>
+
+							<div class="media-bottom">
+
+								<div class="comentar">
+									<div class="media">
+										<div class="media-left  hi-x">
+											<img class="media-object img-c" src="/static/img/nada2.png" style="background-image: url(/img/lorena1.jpg);">
+										</div>
+										<div class="media-body">
+											<div class="commentInput" contenteditable="true"></div>
+											<button class="btn btn-default btn-sm fl-r" type="button">
+												<span class="hi-x">Publicar</span>
+												<span class="vi-x fa fa-pencil-square-o fa-2x"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="comentarios noPageScroll">
+									<div class="media">
+										<div class="media-left">
+											<a href="#">
+												<img class="media-object img-c" src="/static/img/nada2.png" style="background-image: url(/img/lorena1.jpg);">
+											</a>
+										</div>
+										<div class="media-body">
+											<div class="commentStatus">
+												<span title="Eliminar este comentario">Rechazar</span>
+												<span title="Publicar este comentario">Aprobar</span>
+											</div>
+											<h5 class="media-heading">Lorena Hot <small>26 jun. 2015</small></h5>
+											<p>Woowwww I like that idea to be a better life for the next generation... more go green more better life﻿</p>
+										</div>
+									</div>
+
+									<div class="media">
+										<div class="media-left">
+											<a href="#">
+												<img class="media-object img-c" src="/static/img/nada2.png" style="background-image: url(/img/11.jpg);">
+											</a>
+										</div>
+										<div class="media-body">
+											<div class="commentStatus">
+												<i class="fa fa-times" title="Eliminar"></i>
+											</div>
+											<h5 class="media-heading">Suria <small>30 jun. 2015</small></h5>
+											<p>Larry your new hangouts suks. There is no option to answer calls when the phone rings. Are your developers from India?﻿</p>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+		<!--========== MODAL DE LA GALERIA ===========-->
+		<div id="galeryModal">
+			<div id="photoInput">
+				<div>
+					<div id="inputImgPublish" contenteditable="true" data-placeholder="Escribe una publicación"></div>
+					<button id="buttonImgPublish" type="button">
+						<i class="fa fa-pencil-square-o fa-3x" style="vertical-align: bottom;"></i>
+					</button>
+					
+					<!-- <input type="text"/> -->
+				</div>
+			</div>
+			<div id="galeryDialog">
+				<img id="galeImgMod" src="/static/img/camila.jpg">
+			</div>
+			<i id="closeGale" class="fa fa-times"></i>
+			<i id="dirL" class="fa dir fa-chevron-left"></i>
+			<i id="dirR" class="fa dir fa-chevron-right"></i>
+		</div>
+
+		<!--========== Precarga de imagenes ===========-->
+		<div style="display: none;"><img src="/static/img/kiss-on.png"></div>
+</TEMPLATE>
+
+<TEMPLATE HEAD>
+	<!--[if lte IE 9]>
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/masonry.js"></script>
+		<style type="text/css">
+			.mifoto{
+				width: 24.93% !important;
+				margin-bottom: 0 !important;
+				float: left;
+				padding: 2px;
+			}
+
+			.modalDialog{display: none;}
+			.modalDialog:target{display: block;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var misfotos = $('#misfotos');
+				misfotos.imagesLoaded( function(){misfotos.masonry({itemSelector : '.mifoto'});});
+			}
+		</script>
+	<![endif]-->
+</TEMPLATE>
+
+<TEMPLATE fotosMin>
+	<div class="mifoto"><img src="{$FOTOMIN}" data-href="{$FOTOHIGH}"></div></TEMPLATE>
+
+<TEMPLATE camposFicha>
+	<div>{$CAMPO}</div><div>{$VALOR}</div></TEMPLATE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

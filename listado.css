@@ -1,0 +1,612 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.ttf'), url('../fonts/OpenSans-Regular.woff');
+}
+@font-face {
+  font-family: 'seducFont';
+  src: url('../fonts/BrushScriptStd.otf'), url('../fonts/BrushScriptStd.woff');
+}
+
+body{ padding-top: 50px; }
+
+/*======================*/
+/*====  Components  ====*/
+/*======================*/
+/* Subtitle */
+.subtitle {
+	background: -moz-linear-gradient(rgba(255,255,255,0) 45%, lightgrey, rgba(255,255,255,0) 55%);
+	background: linear-gradient(rgba(255,255,255,0) 45%, lightgrey, rgba(255,255,255,0) 55%);
+	clear: both;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	float: left;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	color: #777;
+}
+.subtitle > span {
+  background-color: rgb(255, 241, 245);
+}
+
+/*===================*/
+/*====  Listado  ====*/
+/*===================*/
+
+#contenedor{
+	min-height: calc(100% - 129px);
+	max-width: 1200px;
+	margin: auto;
+	padding-left: 3px;
+	padding-right: 3px;
+}	.listado{
+		width: 100%;
+	}	.cl-listado{
+			float: left;
+			width: 33.333%;
+			padding: 0 5px 20px 5px;
+		}	
+
+					.chatOn .chatSign{
+						color: #CDEB8B !important;
+						text-align: left;
+					}
+
+						.love{
+							position: relative;
+							text-align: right;
+						}
+
+						.love > input{
+							position: absolute;
+							z-index: 5;
+							margin: 0;
+							width: 18px;
+							height: 18px;
+							opacity: 0;
+							right: 0;
+							cursor: pointer;
+						}
+						
+
+						.love > input:checked + i{color: #FF0084!important;}
+
+			.anunciate > img{
+				width: 100%;
+    			border-radius: 4px;
+			}
+
+/*=========================*/
+/*====  Listado Cards  ====*/
+/*=========================*/
+
+
+#city{
+	float: left;
+	width: 100%;
+	/*max-height: 300px;*/
+	margin-bottom: 20px;
+	position: relative;
+	-webkit-transition: max-height 0.3s;
+	-moz-transition: max-height 0.3s;
+	transition: max-height 0.3s;
+}
+
+#whereCity{
+	position: fixed;
+	width: 100%;
+	max-width: 1184px;
+	z-index: 9;
+	background-color: #fff1f5;
+	border-bottom: 2px solid #9d0532;
+	margin-top: -30px;
+	-webkit-transition: margin-top 0.3s linear;
+	-moz-transition: margin-top 0.3s linear;
+	transition: margin-top 0.3s linear;
+}
+
+#shadowCity{
+	padding-top: 10px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#cities{
+	background-color: #fff1f5; 
+	background-image: url(/img/grayBorder.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+	width: 100%;
+	position: fixed;
+	max-width: 1184px;
+	z-index: 9;
+	margin-top: 0;
+
+	
+}
+
+#cities.onlyCity{
+	background-image: url(/img/pinkBorder.png);
+}
+
+
+#cities:after, #cities:before{
+	display: table;
+	content: ' ';
+}
+#cities:after{
+	clear: both;
+}
+
+
+#city.scrolled #cities{
+	position: fixed;
+	
+}
+
+#city.scrolled.minibar #cities{
+	-webkit-transition: margin-top 0.4s;
+	-moz-transition: margin-top 0.4s;
+	transition: margin-top 0.4s;
+}
+
+#city.scrolled #whereCity{
+	margin-top: 0;
+}
+
+
+#cities > div{
+	white-space: nowrap;
+	max-width: 200px;
+	overflow: hidden;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	transition: all 0.5s linear;
+}
+
+#cities.onlyCity > div{
+	max-width: 0;
+	padding: 0;
+}
+
+#cities.onlyCity > div.active{
+	max-width: 200px;
+	padding: 0;
+}
+
+#cities > span{
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+#cities.onlyCity > span{
+	padding: 5px 10px;
+	padding-right: 4px;
+	font-size: 14px;
+}
+
+
+#cities > div, #cities > span{
+	display: inline-block;
+	float: left;
+	padding: 0 10px;
+}
+
+
+
+#city input{
+	position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#cities > div > a{
+	display: block;
+	padding: 5px 0 5px;
+	color: #9C9C9C;
+}
+
+#cities > div.active > a{
+    font-weight: 500;
+    color: #9D0532;
+    border-bottom: 2px solid;
+    height: 30px;
+}
+
+#cities > :first-child{
+	font-size: 1.2em;
+    font-weight: 500;
+    color: #9D0532;
+}
+
+
+.saparatorList{
+	float: left;
+	width: 100%;
+	border-bottom: 2px solid #9d0532;
+	padding-top: 58px;
+	margin-top: -40px;
+	margin-bottom: 15px;
+	font-weight: 500;
+	color: #9D0532;
+}
+
+
+.chica{
+	display: block;
+	background-color: #FFFFFF;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	margin-bottom: 5px;
+	color: #444444 !important;
+}
+
+
+	.chica > .head{ position: relative;}
+
+		.chica > .head > .img{
+			display: block;
+			width: 100%;
+			padding-top: 65%;
+			padding-bottom: 65%;
+		    background-size: 100% auto;
+		    background-repeat: no-repeat, repeat, no-repeat;
+		    -webkit-transition: background-image 0.5s;
+		    -moz-transition: background-image 0.5s;
+		    transition: background-image 0.5s;
+		}
+
+		.chica > .head > .name, .chica.peque > .name{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin-top: -3px;
+			padding: 4px 8px;
+			z-index: 2;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: #FFFFFF;
+			text-shadow: 0px -2px 3px #FF0000, 0px 2px 3px #FF0000;
+			filter: Shadow(Color=#FF0000, Direction=180, Strength=3);
+			font-size: 14px;
+			text-align: center;
+			font-family: seducFont;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    font-smoothing: antialiased;
+		}
+
+			.reales, .certi{
+				max-width: calc(100% - 33px);
+				position: absolute;
+				bottom: 2px;
+				right: 0;
+				z-index: 5;
+			}
+
+			.reales{ 
+				left: 2px; 
+				bottom: 2px;
+			}
+
+			.certi{
+				bottom: 0;
+				right: 0;
+				width: 23px;
+			}
+
+	.chica > .body{
+		padding: 10px;
+		position: relative;
+    	background: white;
+	}
+
+		.chica > .body > .fl-r{
+		    margin-left: 10px;
+    		margin-top: 10px;
+    		color: #E0E0E0;
+		}
+
+		.chica > .body > .fl-r > span{
+			display: block;
+
+		}
+		
+		.chica > .body > p{height: 45px;}
+		.chica > .body > p, .chica.peque > .right{
+			font-size: 8pt;
+			font-family: "Open Sans";
+			overflow: hidden;
+		}
+
+
+
+
+	/*  Chica peque  */
+
+
+
+	.chica.peque{
+		position: relative;
+	}
+
+	.peque:before, .peque:after{
+		content: ' ';
+		display: table;
+	}
+	.peque:after{
+		clear: both;
+	}
+
+	.chica > .left, .chica > .right{
+		float: left;
+	}
+	.chica > .left{ 
+		width: 100%; 
+	}
+
+		.chica > .left > .img{
+			padding: 65% 0;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			border-radius: 4px 0 0 4px;
+			-webkit-transition: background-image 1s;
+			-moz-transition: background-image 1s;
+			transition: background-image 1s;
+		}	
+
+	.chica > .right > .main{
+	    padding: 83% 0;
+    	position: relative;
+	}
+	.pq .chica > .right > .main{
+	    padding: 65% 0;
+	}
+
+
+	.chica > .right > .main > span{
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    overflow: hidden;
+	    bottom: 15px;
+	    padding-top: 5px;
+	}
+
+	.pq .chica > .right > .main > span{padding-top: 0;}
+
+	.chica .bottom-btns{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		color: #E0E0E0;
+		font-size: 14px;
+		margin-bottom: -10px;
+	}
+
+	.chica .bottom-btns > span{margin-left: 4px;}
+
+
+	/*  Seductoras WOW Animation  */
+
+	.chica .imgWow{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		border-radius: 4px 0 0 4px;
+	}
+
+	.chica .imgWow > div{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		opacity: 1;
+		display: none;
+		-webkit-transform:scale(1,1);
+		   -moz-transform:scale(1,1);
+	 	        transform:scale(1,1);
+		-webkit-transition: opacity 1s, background-position 5s, -webkit-transform 1s;
+			  -moz-transition: opacity 1s, background-position 5s, -moz-transform 1s;
+					    transition: opacity 1s, background-position 5s, transform 1s;
+	}
+
+	.chica .imgWow > div.topleft{ background-position: 0 0; }
+	.chica .imgWow > div.topright{ background-position: 100% 0; }
+	.chica .imgWow > div.bottomleft{ background-position: 0 100%; }
+	.chica .imgWow > div.bottomright{ background-position: 100% 100%; }
+
+	.chica .imgWow > div.topleftI{ background-position: 0 0; }
+	.chica .imgWow > div.toprightI{ background-position: 100% 0; }
+	.chica .imgWow > div.bottomleftI{ background-position: 0 100%; }
+	.chica .imgWow > div.bottomrightI{ background-position: 100% 100%; }
+
+	.chica .imgWow.fd1 > div:nth-child(1),
+	.chica .imgWow.fd2 > div:nth-child(2),
+	.chica .imgWow.fd3 > div:nth-child(3),
+	.chica .imgWow.fd4 > div:nth-child(4),
+	.chica .imgWow.fd5 > div:nth-child(5),
+	.chica .imgWow.fd6 > div:nth-child(6),
+	.chica .imgWow.fd7 > div:nth-child(7),
+	.chica .imgWow.fd8 > div:nth-child(8),
+	.chica .imgWow.fd9 > div:nth-child(9),
+	.chica .imgWow.fd10 > div:nth-child(10)
+	{ z-index: 1; display: block; }
+
+	.chica .imgWow.fd1 > div:last-child,
+	.chica .imgWow.fd2 > div:nth-child(1),
+	.chica .imgWow.fd3 > div:nth-child(2),
+	.chica .imgWow.fd4 > div:nth-child(3),
+	.chica .imgWow.fd5 > div:nth-child(4),
+	.chica .imgWow.fd6 > div:nth-child(5),
+	.chica .imgWow.fd7 > div:nth-child(6),
+	.chica .imgWow.fd8 > div:nth-child(7),
+	.chica .imgWow.fd9 > div:nth-child(8),
+	.chica .imgWow.fd10 > div:nth-child(9)
+	{
+		z-index: 2;
+		opacity: 0;
+		display: block;
+		-webkit-transform:scale(1.5,1.5);
+		   -moz-transform:scale(1.5,1.5);
+		        transform:scale(1.5,1.5);
+	}
+
+	
+	
+	.chica .imgWow > img{
+		position: absolute;
+	}
+
+
+	
+
+
+/*=======================*/
+/*====  Media Query  ====*/
+/*=======================*/
+
+
+@media (min-width: 400px){.cl-listado{width: 25%;}}
+@media (min-width: 500px){.cl-listado{width: 20%;}}
+@media (min-width: 768px){
+
+	.chiquilla{border: 1px solid #FBAEC4;}
+	.descripcion{display: block;}
+	.foto{
+		height: 110px;
+		padding: 0;
+		border-radius: 0;
+	}
+	.foto > img{margin-top: 0;}
+
+	.foto > .horizon{
+		height: 130%;
+	}
+	.subtitle {
+		font-size: 18px;
+	}
+	.chiquilla-h > .nombre{
+		font-size: 19px;
+		width: calc(100% - 60px);
+		margin-bottom: -3px;
+	}
+
+	.chiquilla-h{border: none;}
+
+	.chiquilla{background-color: #ffded2;}
+
+
+
+
+	.certi{
+		margin-bottom: -16px;
+		width: auto;
+	}
+
+	.chica.peque .certi{
+		margin-bottom: 0;
+    	margin-right: -16px;
+	}
+
+	.cl-listado.pq.span{margin: 0.75% 0;}
+
+
+
+	#cities > :first-child, #shadowCity > :first-child{
+		font-size: 1.5em;
+	}
+
+	.pq .chica.peque .certi{
+    	margin-right: 0;
+	}
+
+	.chica > .head > .img{
+		padding-top: 35%;
+		padding-bottom: 35%;
+	}
+
+	.chica .imgWow{
+		border-radius: 4px;
+	}
+	
+	.chica > .head > .name, .chica.peque > .name{
+		font-size: 22px;
+	}
+	.chica.peque > .name{
+		margin-top: -16px;
+		bottom: auto;
+	}
+	.pq .chica.peque > .name{
+		margin-top: -4px;
+		width: 50%;
+		font-size: 16px;
+		top: 0;
+		bottom: auto;
+	}
+
+	.chica.peque{
+		overflow: visible;
+		margin-top: 10px;
+	}
+
+	.chica > .right{ 
+		width: 45%; 
+		padding: 10px;
+		
+	}
+	.chica > .left{ 
+		width: 55%; 
+	}
+
+	.pq .chica > .right{ 
+		width: 50%; 
+		padding: 10px;
+		
+	}
+	.pq .chica > .left{ 
+		width: 50%; 
+	}
+
+	
+}
+@media (min-width: 992px){
+	
+
+
+	.foto{ height: 140px; }
+
+	body.wow .foto > .horizon{ height: 150%; }
+	body.wow .foto > img{ display: block; }
+}
+@media (min-width: 1200px){
+	.foto{
+		width: 122px;
+		height: 140px;
+		border-radius: 4px;
+	}
+	.chiquilla-b{padding: 5px}
+
+	.descripcion {
+		width: 92px;
+		padding: 0 5px;
+		height: 140px;
+	}
+	.vi-l{
+		display: initial;
+	}
+
+	.foto > .horizon{
+		height: 100%;
+	}
+	body.wow .foto > .horizon{height: 120%;}
+}
+

@@ -1,0 +1,124 @@
+<!-- REAL_PATH
+	./img -> /static/img
+	./js -> /static/js
+/ REAL_PATH --><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>{TEMPLATE TIT_PAG}</title>
+		<META NAME="ROBOTS" CONTENT="all,index,follow" />
+		{TEMPLATE METATAGS}
+<!-- EXCLUDE -->
+		<link rel="stylesheet" type="text/css" href="./pl/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="./pl/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="./pl/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="./pl/css/chat.css" />
+<!-- / EXCLUDE -->
+		<link rel="stylesheet" type="text/css" href="/static/css/{$AREA}.css" />
+		<script type="text/javascript" src="/static/js/{$AREA}.js"></script>
+		{TEMPLATE HEAD}
+	</head>
+	<body class="">
+		<nav>
+			<div class="row">
+				<ul class="fl-l">
+					<li><a class="pd0" href="/escorts-en-mexico.html"><img id="logo" src="./img/silueta.png"></a></li>
+					{TEMPLATE LiteCompleta}
+					<li id="publicar-p" class="hi-x">
+						<a id="anuncio" href="/registro/seductora" class="tooltip-bottom" data-tooltip="Seductora Regístrate y agrega tu perfil al listado, modifica tu perfil, agrega fotos y contenidos a tu espacio, abre tu propia página web y mucho más ...">
+							<span>Publicar mi Perfil</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="fl-r">	
+					<li id="logged">
+						<!--========== NOTIFICACIONES ===========-->
+						<div id="notifications">{INTEMPLATE notif}</div>
+						
+						<!--========== LOGUEADA(O) ===========-->
+						<div id="logued" style="display: none;">{INTEMPLATE chkLogueada}</div>
+
+						<!--========== SIN LOGUEAR ===========-->
+						<div class="bt-group" id="LogReg" style="display: none;">{INTEMPLATE logReg}</div>
+
+					</li>
+					<li class="hi-x dv-v"></li>
+					<li id="visitas" class="hi-x" title="857 en linea">
+						<span>
+							<i class="fa fa-users fa-2x"></i>
+							<span id="contador"></span>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		{INTEMPLATE contenidos}
+		<!--========== PIE DE PAGINA ===========-->
+		<footer>
+			<div id="footer" class="row tx-c">
+				<div><p class="pd10">&copy;Copyright 2015 Seductoras.com.mx</p></div>
+				<div><p class="pd10"><a href="../terminos_y_condiciones.htm">Términos y Condiciones de Uso</a></p></div>
+				<div><p class="pd10"><a href="../privacidad.html">Politicas de privacidad</a></p></div>
+				<div><p class="pd10"><a href="#Mcontacto">Contacto</a></p></div>
+			</div>
+		</footer>
+
+		<!--========== LOGUEO ===========-->
+		<div id="Mlogin" class="modalDialog">
+			<div>
+				<a href="#" class="close"><i class="fa fa-times"></i></a>
+				<img class="center-b" src="./img/seductoras_logo.png">
+				<div class="center-b tx-c">
+					<form id="loginForm" method="post">
+						<label>Login / Usuario</label>
+						<input type="text" name="login" id="login" class="form-control">
+						<label>Contraseña</label>
+						<input type="password" name="pass" id="pass" class="form-control">
+						<button type="submit" class="btn center-b">ENTRAR</button>
+					</form>
+				</div>	
+				<div id="errMessaje" class="tx-c"></div>			
+			</div>
+		</div>
+
+		<!--========== FORMA DE CONTACTO ===========-->
+		<div id="Mcontacto" class="modalDialog">
+			<div>
+				<a href="#" class="close"><i class="fa fa-times"></i></a>
+				<img class="center-b" src="./img/seductoras_logo.png">
+				<h2 class="tx-c color-p">Contacto</h2>
+				<form id="form-contact" method="POST" action="">
+					<!--[if lte IE 9]><label>Tu correo</label><![endif]-->
+					<input type="email" class="form-control" placeholder="Tu correo">
+					<!--[if lte IE 9]><label>Asunto</label><![endif]-->
+					<input type="text" class="form-control" placeholder="Asunto">
+					<select class="form-control">
+						<option>Comentarios y sugerencias</option>
+						<option>Soporte técnico</option>
+						<option>Otros</option>
+					</select>
+					<!--[if lte IE 9]><label>Mensaje</label><![endif]-->
+					<textarea class="form-control" placeholder="Mesaje"></textarea>
+					<button class="btn c-dark center-b" type="submit">Enviar</button>
+				</form>
+			</div>
+		</div>
+
+		<!--========== BARRA DE CHAT ===========-->
+		<div id="chat-bar"></div>
+
+		
+<!-- EXCLUDE -->
+		<script type="text/javascript" src="/static/js/ciudades.listado.js"></script>
+<!-- / EXCLUDE -->
+		
+		<script type="text/javascript" src="/m/meteor/list.php"></script>
+		<script type="text/javascript" src="./js/list.bundle.js"></script>
+		<script type="text/javascript">
+		 	vLogued({$LOGUED});
+		 	{$STARTSOCKET}
+		</script>
+
+	</body>
+</html>

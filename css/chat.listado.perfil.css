@@ -1,0 +1,844 @@
+/*========================================*/
+/*=========  Ventanas del chat  ==========*/
+/*========================================*/
+#chat-bar{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	font-size: 0;
+	padding-left: 2px;
+	padding-right: 2px;
+	white-space : nowrap;
+	z-index: 11;
+}
+
+	#chatCont, #moreChats{float: left;}
+
+	.chat-win{
+		float: left;
+		position: relative;
+	}
+
+		.chat-head{
+			width: 170px;
+			height: 35px;
+			background: #BE1C4C;
+			border: 1px solid #BE1C4C;
+			overflow: hidden;
+			padding: 4px;
+			font-size: 14px;
+			margin-right: 2px;
+			margin-left: 2px;
+			border-radius: 4px 4px 0 0;
+			position: relative;
+		}
+
+			.lista{
+				height: calc(100% - 34px);
+				width: 100%;
+				overflow: auto;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background-color: #FFFFFF;
+
+			}
+
+			.lista > div > .fa{
+				display: none;
+				color: #CDEB8B;
+				margin-top: 4px;
+    			margin-left: 2px;
+			}
+			.lista > div.on > .nombre{width: calc(100% - 55px) !important;}
+			.lista > div.on > .fa{display: inline-block;}
+
+
+			.chat-head > *{
+				float: left;
+			}
+
+			@keyframes radar {
+			  0% {
+			    -webkit-box-shadow: #FF6B6B 0 0 0px 0px;
+			    box-shadow: #FF6B6B 0 0 0px 0px;
+			  }
+			  100% {
+			    
+			    -webkit-box-shadow: rgba(0,0,0,0) 0 0 0px 15px;
+			    box-shadow: transparent 0 0 0px 15px;
+			  }
+			}
+
+			.newM > .chat-head > .badget{ 
+				display: block; 
+				animation: radar 2s;
+			}
+
+			.chat-nombre{
+				margin-top: 2px;
+				padding-left: 7px;
+				color: #FFFFFF;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				max-width: 135px;
+				text-decoration: none!important;
+				position: relative;
+			}
+
+			.writing .chat-nombre{padding-right: 27px;}
+
+			#chat-bar .img-c, #chat-bar .chat-img{
+				width: 25px;
+				background-size: cover !important;
+				background-position: center !important;
+				display: block;
+			}
+
+			#chatButtons > input[name="chatButtons"]{
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			#chatCont .img-c, #moreChats .img-c{opacity: 0.3;}
+			#chatCont .active .chat-img, #moreChats .active .chat-img{opacity: 1;}
+
+			
+			.chat-nombre:hover{color: #ddd;}
+			.chat-win:hover > .chat-head > .chat-nombre{max-width: 115px;}
+
+			.chat-ico{
+				color: white;
+				padding-top: 2px;
+				cursor: pointer;
+				float: right;
+				display: none;
+			}
+
+			#chatCont .chat-win:hover .chat-head > .chat-ico{display: block !important;}
+			#moreChats .chat-win .chat-head:hover > .chat-ico{display: block !important;}
+
+			.badget{
+				display: none;
+				position: absolute;
+				background-color: #FF6B6B;
+				padding: 0 5px;
+				font-size: 13px;
+				font-weight: 500;
+				color: white;
+				border-radius: 50%;
+				margin-left: -4px;
+				margin-top: -4px;
+				margin-right: -13px;
+				z-index: 1;
+			}
+
+			.chat-ico > .fa-minus{
+				display: none;
+				vertical-align: middle;
+			}
+
+			.chat-ico > .fa-times{
+				z-index: 5;
+				position: relative;
+			}
+
+
+		.chat-body{
+			overflow: hidden;
+			display: none;
+			width: 200px;
+			height: 250px;
+			border: 1px solid #ddd;
+			margin-right: 2px;
+			margin-left: 2px;
+		}
+
+		#moreChats .chat-body{
+			position: absolute;
+			z-index: 11;
+			border-radius: 4px 4px 4px 0;
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+		}
+		#moreChats > .chat-win > .chat-head{width: auto !important;}
+		#moreChats > .chat-win > .chat-head > .fa-bars{
+			padding: 5px 8px;
+			color: #FFF;
+		}
+
+		#moreChatsTg{
+			position: absolute;
+			opacity: 0;
+		}
+
+		#moreChatsLb{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 20;
+		}
+
+		#moreChats > .chat-win > .mini{
+			bottom: 0;
+			width: 100%;
+		}
+			.chat-line{
+				overflow: auto;
+				height: 219px;
+				border-bottom: 1px solid #ddd;
+				background-color: #FFF1F5;
+				width: 250px;
+				
+			}
+
+				.btn-more-msj{
+					font-size: 12px;
+				    line-height: 1;
+				    margin: auto;
+				    display: block;
+				    margin-bottom: 5px;
+				    margin-top: 8px;
+					color: #BE1C4C;
+				    background-color: #FFFFFF;
+				    border-color: #BE1C4C;
+				}
+				.btn-more-msj:hover{
+					background-color: #FFE8EF;
+				}
+
+				.chat-line > div{
+					white-space: pre-wrap;
+					word-wrap: break-word;
+					max-width: 200px;
+					border-radius: 4px;
+					padding: 5px 8px;
+					background-color: #FFF;
+					box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+					font-size: 12px;
+					line-height: 1.3;
+					margin: 5px;
+					clear: both;
+					float: left;
+					position: relative;
+				}
+
+				.chat-line > .statusChat{
+					width: 100%;
+					color: #E07A98;
+					float: left;
+					font-size: 11px;
+					padding: 2px 6px;
+				}
+
+				.chat-line > .escribiendo > div{
+				    display: inline-block;
+    				height: 16px;
+				}
+				@-webkit-keyframes bouncyBalls {
+					0%  {margin-bottom: 0;}
+					30% {margin-bottom: 7px;}
+					60% {margin-bottom: 0;}
+					100%{margin-bottom: 0;}
+				}
+				@keyframes bouncyBalls {
+					0%  {margin-bottom: 0;}
+					30% {margin-bottom: 7px;}
+					60% {margin-bottom: 0;}
+					100%{margin-bottom: 0;}
+				}
+
+				.bouncy{
+					font-size: 14px;
+					margin-top: -21px;
+    				position: absolute;
+    				right: 0;
+    				bottom: 0;
+    				display: none;
+    				background-color: #BE1C4C;
+				}
+
+				.writing .bouncy{display: inline-block;}
+
+				.bouncyBalls > span{
+					width: 4px;
+					height: 4px;
+					border-radius: 4px;
+					margin-left: 2px;
+					margin-right: 2px;
+					background-color: #D2B0BA;
+					display: inline-block;
+				}
+
+				.bouncyBalls{ display: inline-block; }
+				.bouncyBalls > :first-child{
+					-webkit-animation: bouncyBalls 1.3s infinite linear;
+						    animation: bouncyBalls 1.3s infinite linear;
+				}.bouncyBalls > :nth-child(2){
+					-webkit-animation: bouncyBalls 1.3s 0.2s infinite linear;
+						    animation: bouncyBalls 1.3s 0.2s infinite linear;
+				}.bouncyBalls > :last-child{
+					-webkit-animation: bouncyBalls 1.3s 0.4s infinite linear;
+						    animation: bouncyBalls 1.3s 0.4s infinite linear;
+				}
+				
+				.viewed:before, .committed:before{
+					display: block;
+					height: 11px;
+					position: absolute;
+					right: 3px;
+					bottom: 3px;
+				}
+
+				.viewed:after, .committed:after{
+					content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+					display: inline;
+				}
+
+				.viewed:before{
+					content: url(/static/img/tits.png);
+				}
+
+				.committed:before{
+					content: url(/static/img/tit.png);
+				}
+
+				.chat-line > .fl-r{
+					background-color: #FFEAEA !important;
+				
+				}
+
+			.input{
+				font-size: 13px;
+				width: 100%;
+				height: 30px;
+				overflow: auto;
+				padding: 0 6px;
+				background-color: white;
+				border: none;
+				outline: none;
+			}
+			.input:empty:before{
+				content: 'Escribe un mensaje';
+				color: #ddd;
+			}
+			.input:focus:before{content: '';}
+
+/*=========================*/
+/*====  Boton de Chat  ====*/
+/*=========================*/
+
+	#chat, .misChicas{position: relative;}
+
+	#chat > .mini{
+		width: 65px;
+		bottom: 0;
+		right: 5px;
+	}
+	.misChicas > .mini{
+		width: 100%;
+		bottom: 0;
+	}
+
+	#chat > .chat-head > :not(id), .misChicas > .chat-head > :not(id){float: none;}
+
+	#T-latest,
+	#T-online{
+		width: 50%;
+		margin: 0;
+		height: 30px;
+		position: relative;
+		z-index: 10;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	#hdp > :first-child{border-left: 1px solid #DDDDDD;}
+	#hdp > :last-child{border-right: 1px solid #DDDDDD;}
+
+
+
+	#latest,
+	#online,
+	#recientes{
+		display: none;
+		width: 100%;
+		height: calc(100% - 64px);
+		background-color: white;
+		color: #444!important;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		font-size: 14px;
+		overflow: auto;
+		-webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	#latest{
+		display: block!important;
+		height: 100%;
+		border: none;
+	}
+
+	#latest .mini{display: none;}
+
+	#chat .chat-win{display: block;}
+
+	#chat .chat-body{border:none;}
+
+	#latest .bouncy{background-color: #FFFFFF;}
+
+
+	#hdp{
+		position: relative;
+		margin-top: -30px;
+		width: 100%;
+		height: 30px;
+		font-size: 13px;
+		font-weight: 500;
+		color: #9D0530;
+		border-radius: 3px 3px 0 0;
+		padding: 0;
+    	border: none;
+	}
+
+		#hdp > div{
+			width: 50%;
+			height: 100%;
+			text-align: center;
+			padding: 5px 8px;
+			float: left;
+			background-color: #FFE5F3;
+		}
+
+		#T-latest:checked ~ #hdp > :first-child,
+		#T-online:checked ~ #hdp > :last-child{
+			background-color: white;
+			border: 1px solid #ddd;
+			border-bottom: none;
+		}
+
+		#T-latest:checked ~ #hdp > :first-child{ border-top-right-radius: 4px; }
+		#T-online:checked ~ #hdp > :last-child{ border-top-left-radius: 4px; }
+
+
+		#T-latest:checked ~ #hdp > :last-child,
+		#T-online:checked ~ #hdp > :first-child{
+			border-bottom: 1px solid #ddd;
+		}
+
+		#T-online:checked ~ #online,
+		#T-latest:checked ~ #recientes{
+			display: block;
+		}
+
+		.chat-body.latest #hdp > :first-child, .chat-body.latest #latest{display: none!important;}
+		.chat-body.latest #T-online, .chat-body.latest  #T-latest{pointer-events: none;}
+		.chat-body.latest #hdp > div{width: 100%;}
+
+	#latest .chat-win{float: none;}
+	#latest .chat-head,
+	#recientes .chat-head,
+	#online > .chat-head{
+		background: none;
+		border: none;
+		border-bottom: 1px solid #ddd;
+		padding: 8px 10px;
+		cursor: pointer;
+		margin-right: 0;
+		margin-left: 0;
+		border-radius: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	#latest .chat-head:hover,
+	#online > .chat-head:hover,
+	#latest .chat-head:hover .bouncy{
+		background-color: #EEE;
+	}
+
+		#latest .chat-head > .chat-nombre,
+		#recientes .chat-head > .chat-nombre,
+		#online > .chat-head > .chat-nombre{
+			max-width: calc(100% - 25px);
+			padding-left: 10px;
+		}
+
+		#recientes .chat-head > .chat-nombre{
+			margin-top: 0;
+			line-height: 1;
+		}
+
+		#recientes .chat-head > .chat-nombre > small{
+			color: #ABABAB;
+		}
+
+		#latest .chat-ico{display: none;}
+
+		#latest .chat-head:hover > .chat-nombre{
+			max-width: calc(100% - 45px) !important;
+		}
+
+		#latest .chat-win .chat-head:hover > .chat-ico{
+			display: inline-block !important;
+		}
+
+		#latest .chat-head > .chat-nombre,
+		#recientes .chat-head > .chat-nombre,
+		#online > .chat-head > .chat-nombre,
+		#latest .chat-head > .chat-ico{
+			color: #444;
+		}
+		
+		#online > .chat-head > .chat-img{opacity: 1;}
+
+
+
+#chat > .chat-head{
+	color: white;
+	padding: 7px;
+	width: 65px;
+}
+.misChicas > .chat-head{
+	padding: 0;
+	border: none;
+	width: auto;
+}
+
+	#chat > .chat-head > .fa-users{color: #FF96B5}
+	#chat.pct > .chat-head > .fa-users{color: #ADCDFF}
+
+	#desconectar{
+		cursor: pointer;
+		display: none;
+	}
+
+	.mini:checked ~ .chat-head #desconectar{display: inline;}
+
+	#desconectar:hover{color: #ddd;}
+
+
+/*=======================*/
+/*====  Toggle Chat  ====*/
+/*=======================*/
+
+.mini{
+	position: absolute;
+	width: 170px;
+	height: 35px;
+	z-index: 2;
+	opacity: 0;
+	margin: 0 0 0 2px !important;
+	cursor: pointer;
+}
+
+.mini:checked{
+	width: 99%;
+	margin-top: -250px !important;
+}
+
+#chatCont .mini:checked ~ .chat-head,
+#chatCont .mini:checked ~ .chat-body,
+#misChicas .mini:checked ~ .chat-head,
+#misChicas .mini:checked ~ .chat-body,
+#chat > .mini:checked ~ .chat-body,
+.misChicas > .mini:checked ~ .chat-body{
+	width: 250px;
+	display: block !important;
+}
+
+#moreChatsTg.active ~ .chat-head,
+#moreChatsTg.active ~ .chat-body{
+	width: 160px;
+	display: block !important;
+}
+
+#latest .mini:checked ~ .chat-body{display: none !important;}
+
+
+
+#latest .chat-head{
+	width: 100% !important;
+
+}
+
+.mini:checked ~ .chat-head,
+#chat .mini:checked ~ .chat-body,
+.misChicas .mini:checked ~ .chat-body{
+	margin-top: -250px;
+}
+
+#moreChatsTg.active ~ .chat-body{
+	height: 190px;
+	margin-top: -190px;
+}
+
+#moreChats label.chat-head{
+	display: block;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+#chat .mini:checked ~ .chat-head,
+#moreChats .mini:checked ~ .chat-head,
+#moreChatsTg.active ~ .chat-head,
+.misChicas .mini:checked ~ .chat-head{margin-top: 0;}
+
+#chat .mini:checked ~ .chat-head,
+#chat .mini:checked ~ .chat-body,
+.misChicas .mini:checked ~ .chat-head,
+.misChicas .mini:checked ~ .chat-body{
+	width: 170px;
+}
+
+#chatCont .mini:checked ~ .chat-head > a{
+	position: relative;
+	z-index: 5;
+}
+
+#chatCont .mini:checked ~ .chat-head > .chat-nombre{
+	width: auto!important;
+	max-width: 160px;
+	display: block;
+}
+
+#chatCont .mini:checked ~ .chat-head > .chat-ico{
+	float: right;
+	padding-right: 2px;
+	display: block;
+}
+
+#chatCont .mini:checked ~ .chat-head > .chat-ico > .fa-minus{display: inline;}
+
+
+#chat > .mini:checked ~ .chat-head,
+.misChicas .mini:checked ~ .chat-head{border-radius: 0;}
+
+
+
+.misChicas > .chat-head > span{ display: none; }
+.misChicas > .mini:checked ~ .chat-head > span{ display: inline; }
+
+.misChicas > .chat-body{
+	border: none;
+	
+}
+
+.misChicas .lista > div{
+	padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.misChicas .lista > :last-child,
+#latest > :last-child,
+#online > :last-child{border-bottom: none;}
+
+.misChicas .lista > div:after, .misChicas > .chat-body > div:before{
+	content: ' ';
+	display: table;
+}
+.misChicas .lista > div:after{
+	clear: both;
+}
+
+.misChicas .lista > div > *{
+	float: left;
+}
+.misChicas .lista > div > .nombre{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 3px;
+    margin-left: 10px;
+    color: #444444;
+    max-width: 163px;
+}
+
+.misChicas .head{
+	background: #BE1C4C;
+	border-radius: 4px 4px 0 0;
+	font-size: 14px;
+	padding: 7px 10px;
+	position: relative;
+}
+
+.misChicas .head > span{
+	float: left;
+}
+
+.misChicas .head:after, .misChicas .head:after{
+	content: ' ';
+	display: table;
+}
+
+.misChicas .head:after{clear: both;}
+
+.misChicas .head a, .misChicas .head, #chatButtons .chat-head label{
+	color: #FFFFFF;
+}
+.misChicas .head a,
+.misChicas .head label{
+	display: inline-block;
+	float: right;
+}
+
+#cerrarChat{
+	position: relative;
+	display: none;
+	vertical-align: top;
+	float: left;
+	margin-left: 5px;
+	z-index: 2;
+}
+
+body.logged #cerrarChat{display: inline-block}
+
+#cerrarChat > input{
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.closeMask,.closeListChat{cursor: pointer;}
+
+.closeMask{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#cerrarChat > div{
+	display: none;
+	position: absolute;
+	padding: 5px 12px;
+	margin-top: 27px;
+	margin-left: -45px;
+	z-index: 1;
+    color: #FFF;
+    background-color: #BE1C4C;
+    border-radius: 0 0 4px 0;
+    font-weight: 500;
+}
+
+#loco:focus ~ div{
+	display: block;
+}
+
+#favori .lista:empty:before, #hist .lista:empty:before{
+	color: #C5C5C5;
+    font-size: 17px;
+    margin-top: 90px;
+    display: block;
+    white-space: normal;
+    text-align: center;
+    padding: 5px;
+}
+
+#favori .lista:empty:before{
+	content: 'Aun no tienes favoritas';
+}
+
+#hist .lista:empty:before{
+	content: 'Aun no tienes historial';
+}
+
+.misChicas .lista > div:hover, #recientes > .chat-head:hover{background-color: #EEEEEE;}
+
+
+
+#chatButtons .chat-body{
+	margin-top: -250px;
+	width: 210px;
+}
+
+#chatButtons .chat-body > div{
+	height: 100%;
+}
+
+#chatList-r:checked + #chatList,
+#favori-r:checked + #favori,
+#hist-r:checked + #hist{
+	display: block !important;
+}
+
+#chatButtons > .radioChat:checked ~ .chat-head{
+	border-radius: 0;
+}
+
+#chatButtons .chat-head.buttons > label{
+	text-align: center;
+	float: left;
+	width: 33.333%;
+	padding: 8px 12px;
+	box-sizing: border-box;
+}
+
+#chatBut > label, #cerrarChat, #cerrarChat .fa{cursor: pointer;}
+
+
+#chatList .head ~ div{height: 100%;}
+
+#chatnoLog, #chatnoOff, #favnoLog{
+	background-color: #FFF;
+	font-size: 14px;
+	white-space: normal;
+	text-align: center;
+	color: #C5C5C5;
+    font-size: 17px;
+    padding-top: 50px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+body.logged #chatnoLog, body.logged #favnoLog{display: none;}
+
+
+#chatnoOff{
+	padding-top: 95px;
+	display: none;
+}
+
+#chatButtons .btn-default{color: #333333 !important;}
+
+#chatList.off #cerrarChat{display: none;}
+
+#chatList.off #chatnoOff{display: block;}
+
+#favnoLog{height: 100%;}
+
+#chatnoLog > span, #favnoLog > span{
+	display: block;
+	margin-bottom: 20px;
+}
+
+
+#chatList-r:checked ~ div > #chatList-t,
+#favori-r:checked ~ div > #favori-t,
+#hist-r:checked ~ div > #hist-t{
+	background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-top: none;
+    color: #BE1C4C;
+}
+
+/*  Boton Activar Chat  */
+
+	#activarChat{
+		width: auto;
+		float: left;
+		color: #fff;
+		padding: 7px 10px;
+		cursor: pointer;
+	}
+

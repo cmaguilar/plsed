@@ -1,0 +1,123 @@
+<TEMPLATE anuncioChica>
+	<script>
+	oFotos['{$ID_CHICA}'] = [{$FOTOS}];
+	</script>
+	<div class="cl-listado {$BASICO}">
+		<a id="c{$ID_CHICA}" href="/escort-{$LOGIN}.html" class="chica peque">
+			<div class="name">{$NOMBRE_CHICA}</div>
+			<div class="left">
+				<div class="img {$ANIMA}" style="background-image: url({$ICO});" data-id="{$ID_CHICA}">
+					<div class="imgWow fd1"> 
+						<div class="<DIRECCION>" style="background-image: url(<LINK>)"></div>
+					</div>
+					{$CERTFOTOS}
+					{$FOTOS_REALES}
+				</div>
+			</div>
+			<div class="right hi-x">
+				<div class="main">
+					<span>{$DESCRIPCION}</span>
+					<div class="bottom-btns">
+						<span class="hi-x chatSign">
+							<i class="fa fa-comments"></i>
+						</span>
+						<span class="hi-x love">
+							<input type="checkbox"><i class="fa fa-heart"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+		</a>	
+	</div>
+</TEMPLATE>
+
+<TEMPLATE LiteCompleta>
+	<li class="vi-m">
+		<a href="/escorts-en-mexico.html?versionLite={$0}" class="pd15 tooltip-bottom" data-tooltip="{$1}">Seductoras {$2}</a>
+	</li>
+</TEMPLATE>
+
+<TEMPLATE fReales>
+	<img class="reales" src="/static/img/fotos_reales.png">
+</TEMPLATE>
+
+<TEMPLATE fCertificada>
+	<img class="certi" src="/static/img/fCert{$TCERT}.png">
+</TEMPLATE>
+
+<TEMPLATE anunciate>
+	<div class="cl-listado"><a href="/v2011/?area=registro" class="anunciate"><img src="/v2011/images/anunciate.jpg" /></a></div>
+</TEMPLATE>
+
+<TEMPLATE TIT_PAG>{$TIPO}s escorts seductoras en {$CIUDAD} {$ESTADO}</TEMPLATE>
+
+<TEMPLATE listaCiudades><div class='{$ACTIVE}'><a href='{$HREF}'>{$CIUDAD}, {$ESTADO}</a></div></TEMPLATE>
+
+<TEMPLATE TIT_CIUDADES>
+	<div id="city">
+		<div id="cities" class="onlyCit">
+			<span>Chicas escorts en</span>
+			{$LCIUDADES}
+		</div>
+	</div>
+</TEMPLATE>
+
+<TEMPLATE cCiudad>
+	<div class='{$ACTIVE}'><a href='{$HREF}'>{$CIUDAD}, {$ESTADO}</a></div>
+</TEMPLATE>
+
+<TEMPLATE divCiudad>
+	<div id='lista{$CIUDAD}{$ESTADO}' class='saparatorList'>{$CIUDAD}, {$ESTADO}</div>
+</TEMPLATE>
+
+<TEMPLATE HEAD>
+	<!--[if lte IE 9]>
+	<style type="text/css">
+	.modalDialog{display: none;}
+	.modalDialog:target{display: block;}
+	</style>
+	<![endif]-->
+	<script>
+	var animarDesactivado = {$VERSIONLITE};
+	</script>
+</TEMPLATE>
+
+<TEMPLATE METATAGS>
+	<META NAME="DESCRIPTION" CONTENT="Preciosas seductoras escorts acompañantes en {$CIUDAD}{$ESTADO}, mexicanas, argentinas y brasileñas, modelos, masajes, chicas hermosas y damas de compañía">
+	<META NAME="KEYWORDS" CONTENT="Seductoras, escorts, {$CIUDAD}{$ESTADO}, acompañantes, chicas, fotos, porno, damas de compañia, escort, mujeres, argentinas, brasileñas, brasileiras, escorts en internet, acompañantes, modelos, agencias de modelos, sexoservidoras">
+</TEMPLATE>
+
+<TEMPLATE titCiuEdo>
+	<div id='lista{$CIUEDO}' class='saparatorList'>{$CIUDAD}, {$ESTADO}</div>
+</TEMPLATE>
+
+<!-- INTEMPLATE a integrar en el template base -->
+<TEMPLATE contenidos>
+		<!--========== LISTADO ===========-->
+		<div id="contenedor">
+			<div class="listado row">
+			{TEMPLATE TIT_CIUDADES}
+			{BREAK resultados}
+			</div>
+		</div>
+</TEMPLATE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
