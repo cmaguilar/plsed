@@ -5,12 +5,14 @@ var vLogued = function(logued) {
 		document.getElementById('logued').style.display = 'block';
 		document.getElementById('LogReg').style.display = 'none';
 		if (logued.tp === 'chk') document.getElementById('photo-bar').style.backgroundImage = 'url(\'/fotosv2/'+logued.id+'/ico/'+logued.img+'\')';
+		document.getElementsByTagName('body')[0].className = 'logged';
 	}else {
 		document.getElementById('login').value = '';
 		document.getElementById('pass').value = '';
 		document.getElementById('errMessaje').innerHTML = '';
 		document.getElementById('LogReg').style.display = 'block';
 		document.getElementById('logued').style.display = 'none';
+		document.getElementsByTagName('body')[0].className = '';
 	}
 };
 
