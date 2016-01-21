@@ -5,7 +5,7 @@ var vLogued = function(logued) {
 		document.getElementById('logued').style.display = 'block';
 		document.getElementById('LogReg').style.display = 'none';
 		if (logued.tp === 'chk') document.getElementById('photo-bar').style.backgroundImage = 'url(\'/fotosv2/'+logued.id+'/ico/'+logued.img+'\')';
-		document.getElementsByTagName('body')[0].className = 'logged';
+		document.getElementsByTagName('body')[0].className = 'editable logged';
 	}else {
 		document.getElementById('login').value = '';
 		document.getElementById('pass').value = '';
@@ -51,9 +51,8 @@ window.addEventListener('load', function() {
 
 			xmlhttp.open('POST', '/?j=logueo&'+params, true);
 			xmlhttp.send();
-		}else{
+		}else
 			document.getElementById('errMessaje').innerText = 'Faltan datos';
-		}
 	};
 
 	/* ----------------------------------------------------------------------

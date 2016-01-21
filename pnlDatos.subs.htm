@@ -1,0 +1,107 @@
+<TEMPLATE contenidos>
+		<form id="MpanelData">
+			<h4>Mis datos a publicar en mi perfil de Seductoras.com.mx</h4>
+			<div class="row">
+				<div class="col-sm-75 col-xs-15">
+					<label>* Nombre a mostrar:</label>
+					<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
+					<a href="#"><i class="fa fa-search"></i> verificar nombre disponible</a>
+					
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>Status:</label>
+					<div>
+						Tu perfil fué rechazado, para aclaraciones envia un email a chicas@seductoras.com.mx para saber la causa. Gracias.
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-75 col-xs-15">
+					<label>* Estado donde te encuentras:</label>
+					<select class="form-control">
+						<option>Morelos</option>
+					</select>
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>* Ciudad donde te encuentras:</label>
+					<select class="form-control">
+						<option>Cuernavaca</option>
+					</select>
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>* Teléfono:</label>
+					<input type="tel" class="form-control">
+					<small>solo admite números, guiones y paréntesis</small>
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>Horario:</label>
+					<input type="text" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 col-xs-15">
+					<label>Estatura:</label>
+					<input type="text" class="form-control" placeholder="mts" value="{$ESTATURA}">
+				</div>
+				<div class="col-sm-3 col-xs-15">
+					<label>Peso:</label>
+					<input type="text" class="form-control" placeholder="kgs">
+				</div>
+				<div class="col-sm-3 col-xs-15">
+					<label>Busto:</label>
+					<input type="text" class="form-control" placeholder="cm">
+				</div>
+				<div class="col-sm-3 col-xs-15">
+					<label>Cintura:</label>
+					<input type="text" class="form-control" placeholder="cm">
+				</div>
+				<div class="col-sm-3 col-xs-15">
+					<label>Cadera:</label>
+					<input type="text" class="form-control" placeholder="cm">
+				</div>
+
+				<div class="col-sm-75 col-xs-15">
+					<label>Color de ojos:</label>
+					<input type="text" class="form-control" placeholder="">
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>Preferencia:</label>
+					<select class="form-control">
+						<option>Hombres y mujeres</option>
+					</select>
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>Idiomas:</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="col-sm-75 col-xs-15">
+					<label>¿ Estás dispuesta a viajar ?</label>
+					<div id="radioTravel">
+						<label><input name="viajes" checked type="radio"><span>Si <i class="fa fa-check"></i></span></label>
+						<label><input name="viajes" type="radio"><span>No <i class="fa fa-check"></i></span></label>
+					</div>
+				</div>
+				<div id="inputSocialNet" class="col-xs-15">
+					<label>Redes sociales:</label>
+					<div>
+						<span><i class="fa fa-facebook fa-2x"></i></span><input type="text" class="form-control" placeholder="Facebook">
+					</div>
+					<div>
+						<span><i class="fa fa-twitter fa-2x"></i></span><input type="text" class="form-control" placeholder="Twitter">
+					</div>
+					<div>
+						<span><i class="fa fa-instagram fa-2x"></i></span><input type="text" class="form-control" placeholder="Instagram">
+					</div>
+				</div>
+				<div id="descripcionCont" class="col-xs-15 tx-c">
+					<label>Descripción adicional de tu perfil:</label><br />
+					<small>(Describe con ingenio la información adicional que deseas agregar a tu perfil,<br />recuerda que lo que pones aquí influye en el éxito para hacer contactos con usuarios del portal)</small>
+					<textarea name="descripcion" id="descripcion"></textarea>
+				</div>
+				<div class="tx-c col-xs-15" style="padding-top: 15px;">
+					<button type="submit" class="btn btn-default">Hacer Cambios</button>
+				</div>
+
+			</div>
+		</form>
+</TEMPLATE>

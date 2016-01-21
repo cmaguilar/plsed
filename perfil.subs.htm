@@ -8,7 +8,7 @@
 		<div id="portada" class="" style="background-image: url({$IMGPORTADA});">
 			<span class="svg"></span>
 			<div id="filtro" class="vi-x"></div>
-			<a href="#" target="socialIFrame" id="edit-portada" class="hi-x btn-circle">
+			<a href="#" target="socialIFrame" id="edit-portada" class="hi-x btn-circle prueba3">
 				<i class="fa fa-pencil fa-2x"></i>
 				<div>&nbsp;&nbsp;Portada</div>
 			</a>
@@ -63,8 +63,8 @@
 
 			<!--========== DATOS Y FOTOS ===========-->
 			<div class="tx-c">
-				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$TELEFONO}</small></h3>
-				<a href="" target="socialIFrame" id="edit-data" class="hi-x btn-circle">
+				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$PUROTELEFONO}</small></h3>
+				<a href="/?a=pnlDatos" target="socialIFrame" id="edit-data" class="hi-x btn-circle">
 					<i class="fa fa-pencil fa-2x"></i>
 					<div>&nbsp;&nbsp;Editar datos</div>
 				</a>
@@ -100,7 +100,7 @@
 
 
 			<!--========== CONTENEDOR DEL IFRAME DEL PANEL ===========-->
-			<div id="socialIframe"><iframe src="http://seductoras.com.mx" name="socialIFrame"></iframe></div>
+			<div id="socialIframe"></div>
 
 			<!--========== PARTE SOCIAL ===========-->
 			<div id="profileFrame">
@@ -233,6 +233,14 @@
 			<i id="dirR" class="fa dir fa-chevron-right"></i>
 		</div>
 
+		<!--========== MODAL DEL PANEL ===========-->
+		<div id="modalPanel" class="modalDialog">
+			<i class="fa fa-times fl-r"></i>
+			<div>
+				<iframe src="" name="socialIFrame"></iframe>
+			</div>
+		</div>
+
 		<!--========== Precarga de imagenes ===========-->
 		<div style="display: none;"><img src="/static/img/kiss-on.png"></div>
 </TEMPLATE>
@@ -259,6 +267,9 @@
 			}
 		</script>
 	<![endif]-->
+	<script>
+	var idChicaDesde = {$IDCHICALOGUEADA};
+	</script>
 </TEMPLATE>
 
 <TEMPLATE fotosMin>
