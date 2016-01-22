@@ -237,3 +237,45 @@ input.panelImgOptTg:checked + .panelImgOpt{
     font-weight: 500;
 }
 
+
+#verifyName{
+	position: relative;
+	color: #dcaaaa;
+}
+#verifyName > i{
+	position: absolute;
+    top: 8px;
+    font-size: 16px;
+    right: 8px;
+    color: #dcaaaa;
+    display: none;
+}
+#verifyName.available > .fa-check{display: block;}
+#verifyName.notAvailable > .fa-times{display: block;}
+
+#verifyName.verifying > a, 
+#verifyName > span, 
+#verifyName.available > a, 
+#verifyName.available > span,
+#verifyName.notAvailable > a,
+#verifyName.notAvailable >span{ display: none; }
+
+#verifyName.verifying > span{
+	display: block;
+	color: #dcaaaa;
+}
+
+@keyframes rotation{
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+#verifyName.verifying .fa-spinner{
+	animation: rotation 3s infinite linear;
+}
+
+#verifyName.available:after{content: 'nombre disponible';}
+#verifyName.notAvailable:after{content: 'escoja otro nombre por favor';}
+
+#verifyName.available > input,
+#verifyName.notAvailable > input{padding-right: 30px;}

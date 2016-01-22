@@ -4,8 +4,13 @@
 			<div class="row">
 				<div class="col-sm-75 col-xs-15">
 					<label>* Nombre a mostrar:</label>
-					<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
-					<a href="#"><i class="fa fa-search"></i> verificar nombre disponible</a>
+					<div id="verifyName">
+						<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
+						<i class="fa fa-check"></i>
+						<i class="fa fa-times"></i>
+						<a href="#"><i class="fa fa-search"></i> verificar nombre disponible</a>
+						<span><i class="fa fa-spinner"></i> verificando nombre disponible</span>
+					</div>
 					
 				</div>
 				<div class="col-sm-75 col-xs-15">
