@@ -4,6 +4,7 @@
 			<div class="row">
 				<div class="col-sm-75 col-xs-15">
 					<label>* Nombre a mostrar:</label>
+<<<<<<< Updated upstream
 					<div id="verifyName">
 						<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
 						<i class="fa fa-check"></i>
@@ -12,11 +13,15 @@
 						<span><i class="fa fa-spinner"></i> verificando nombre disponible</span>
 					</div>
 					
+=======
+					<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
+					<a href="#"><i class="fa fa-search"></i> verificar nombre disponible</a>
+>>>>>>> Stashed changes
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>Status:</label>
 					<div>
-						Tu perfil fué rechazado, para aclaraciones envia un email a chicas@seductoras.com.mx para saber la causa. Gracias.
+					{$STATUSPERFIL}
 					</div>
 				</div>
 			</div>
@@ -24,13 +29,15 @@
 				<div class="col-sm-75 col-xs-15">
 					<label>* Estado donde te encuentras:</label>
 					<select class="form-control">
-						<option>Morelos</option>
+						<option value="0">selecciona ...</option>
+						{$ESTADOS}
 					</select>
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>* Ciudad donde te encuentras:</label>
 					<select class="form-control">
-						<option>Cuernavaca</option>
+						<option value="0">selecciona ...</option>
+						{$CIUDADES}
 					</select>
 				</div>
 				<div class="col-sm-75 col-xs-15">
