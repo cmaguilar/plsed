@@ -28,7 +28,7 @@ window.addEventListener('load', function() {
 	}
 
 	/*  Activa el modal  */
-	function putModalImg(src, classN){
+	function putModalImg(src, classN) {
 		galeImgMod.src = src;
 		document.body.className = document.body.className + classN;
 	}
@@ -97,7 +97,7 @@ window.addEventListener('load', function() {
 
 
 	/*  Modal del panel  */
-	function bodyModalPanel(){ document.body.className = document.body.className + ' modalPanel'; };
+	function bodyModalPanel(){ document.body.className = document.body.className + ' modalPanel'; }
 	document.getElementById('edit-portada').addEventListener('click', bodyModalPanel, false);
 	document.getElementById('edit-foto').addEventListener('click', bodyModalPanel, false);
 	document.getElementById('edit-data').addEventListener('click', bodyModalPanel, false);

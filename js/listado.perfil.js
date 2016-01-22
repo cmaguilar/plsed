@@ -44,6 +44,7 @@ window.addEventListener('load', function() {
 						document.getElementById('errMessaje').innerText = 'Bienvenid@ '+ret.nfo.name;
 						vLogued({'id': ret.nfo.id, 'tp': (ret.aut === 1 ? 'chk' : 'pkt'), 'img': ret.nfo.img});
 						location.href = '#';
+						llvLg = ret.llv;
 						startSocket();
 					}else document.getElementById('errMessaje').innerText = ret.msg;
 				}
