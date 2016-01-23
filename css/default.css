@@ -239,15 +239,13 @@ a{text-decoration: none;}
 .btn-default:hover{background-color: #EEEEEE;}
 
 .form-control{
-  /*background-color: #8B042D;*/
   background-color: #FFFFFF;
   height: 34px;
   width: 100%;
-  /*border: none;*/
   border: 1px solid #DDDDDD;
   border-radius: 4px;
   outline: none;
-  color: #dcaaaa;
+  color: #8B042D;
   font-size: 14px;
   padding: 2px 10px;
   -webkit-appearance: none;

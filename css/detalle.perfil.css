@@ -80,6 +80,26 @@ body.affix #portada{
 	margin: 0 5px;
 }
 
+#icons > .tool-tip, #icons > .fl-r{
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 33px;
+	display: inline-block;
+	color: #FFFFFF !important;
+	cursor: pointer;
+}
+
+#icons > .tool-tip{
+	width: 32px;
+	height: 32px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+#icons > .fl-r{
+	padding: 6px 10px;
+}
+
+
 #viendoChica{
 	display: none;
 	text-align: center;
@@ -269,18 +289,24 @@ width: 100%;}
 	
 }*/
 
-.comentarios > .media{
+/*.comentarios > .media{
 	background-color: transparent;
 	transition: background-color 0.5s ease-in-out;
+}*/
+
+@keyframes highlightCom{
+	from {background-color: transparent;}
+	to   {background-color: #FBB0B0;}
 }
 
 .comentarios > .media.highlight{
-	background-color: #FBB0B0;
+	animation: highlightCom 0.5s 2 alternate ease-in-out;
 	
 }
 
 .loaderGif{
 	padding: 15px;
+	padding-top: 30px;
 }
 .loaderGif > img{
 	width: 30px;
@@ -667,11 +693,6 @@ width: 100%;}
 
 #chat-btn{margin-right: 15px;}
 
-#favory > input{
-	position: absolute;
-    clip: rect(0, 0, 0, 0);
-    pointer-events: none;
-}
 
 #favory.active > i{color: #F5C0EF;}
 
@@ -699,8 +720,8 @@ width: 100%;}
 #edit-gale:hover > div{max-width: 52px;}
 
 
-#favory > div > span:before{content: 'Añadir a';}
-#favory.active > div > span:before{content: 'Quitar de';}
+#favory > .tool-msj > div > span:before{content: 'Añadir a';}
+#favory.active > .tool-msj > div > span:before{content: 'Quitar de';}
 
 
 
