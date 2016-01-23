@@ -36,7 +36,7 @@
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>* Teléfono:</label>
-					<input type="tel" class="form-control">
+					<input type="tel" class="form-control" maxlength="10">
 					<small>solo admite números, guiones y paréntesis</small>
 				</div>
 				<div class="col-sm-75 col-xs-15">
@@ -131,3 +131,6 @@
 		// -->
 		</script>
 </TEMPLATE>
+
+<TEMPLATE option>
+	<option value="{$VAL}" {$SELECTED}>{$TXT}</option></TEMPLATE>
