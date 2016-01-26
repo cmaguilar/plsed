@@ -189,7 +189,8 @@ body.affix #portada{
 -webkit-column-gap: 4px;
 column-count: 4;
 column-gap: 4px;
-width: 100%; }
+width: 100%; 
+margin-top: 10px}
 
 #misfotos > div{
 margin-bottom: 4px;
@@ -658,18 +659,18 @@ width: 100%;}
 	border: none;
 	box-shadow: none;
 	-moz-box-shadow: none;
-	padding: 8px; 
+	padding: 8px 9px; 
 	margin-bottom: 5px;
 	
 }
 
-.sliderbutton{
+/*.sliderbutton{
 	padding: 6px;
 	min-width: 33px;
 	position: relative;
 	z-index: 8;
 	text-align: center;
-}
+}*/
 
 .sliderbutton *{
 	cursor: pointer;
@@ -677,19 +678,19 @@ width: 100%;}
 .chatOn #chat-btn{cursor: pointer;}
 #chat-btn.chatOn > i{color: #CDEB8B;}
 
-#edit-data > i, 
+/*#edit-data > i, 
 #edit-gale > i{
 	display: inline-block;
 	margin-left: 3px;
 	margin-right: -3px;
-}
+}*/
 
-.sliderbutton > i{
+/*.sliderbutton > i{
 	vertical-align: middle;
 	display: inline-block;
 	margin-left: 2px;
 	margin-right: -2px;
-}
+}*/
 
 #chat-btn{margin-right: 15px;}
 
@@ -709,7 +710,8 @@ width: 100%;}
 #edit-portada > div,
 #edit-foto > div,
 #edit-data > div,
-#edit-gale > div{
+#edit-gale > div,
+#orderByTags > div{
 	-webkit-transition: max-width .2s;
 	   -moz-transition: max-width .2s;
 	        transition: max-width .2s;
@@ -718,7 +720,17 @@ width: 100%;}
 #edit-foto:hover > div{max-width: 37px;}
 #edit-data:hover > div{max-width: 84px;}
 #edit-gale:hover > div{max-width: 52px;}
+#orderByTags:hover > div{max-width: 72px;}
 
+
+#orderByTags{
+	opacity: 0;
+	-webkit-transition: opacity 0.2s;
+	   -moz-transition: opacity 0.2s;
+	        transition: opacity 0.2s;
+}
+#galeria:hover > #orderByTags,
+body.editable #orderByTags{opacity: 1;}
 
 #favory > .tool-msj > div > span:before{content: 'Añadir a';}
 #favory.active > .tool-msj > div > span:before{content: 'Quitar de';}
@@ -734,18 +746,18 @@ width: 100%;}
 #sinfotos{
 	display: none;}
 
-.editable #edit-foto, 
-.editable #edit-portada{
+body.editable #edit-foto, 
+body.editable #edit-portada{
 	display: block;}
 
-.editable #edit-data,
-.editable #edit-gale{
+body.editable #edit-data,
+body.editable #edit-gale{
 	display: inline;
 }
 
 .vacio #edit-portada{margin-top: 175px;}
 
-.editable #misfotos{margin-top: 10px;}
+/*#misfotos{margin-top: 10px;}*/
 
 #sinfotos{
 	margin-top: 100px;

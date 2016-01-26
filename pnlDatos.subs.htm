@@ -20,31 +20,51 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-75 col-xs-15">
-					<label>* Estado donde te encuentras:</label>
+				<div class="col-sm-25 col-xs-15">
+					<label>* Estado:</label>
 					<select class="form-control" id="estado">
 						<option value="0">selecciona ...</option>
 						{$ESTADOS}
 					</select>
 				</div>
-				<div class="col-sm-75 col-xs-15">
-					<label>* Ciudad donde te encuentras:</label>
+				<div class="col-sm-25 col-xs-15">
+					<label>* Ciudad:</label>
 					<select class="form-control" id="ciudad">
 						<option value="0">selecciona ...</option>
 						{$CIUDADES}
 					</select>
 				</div>
-				<div class="col-sm-75 col-xs-15">
+				<div class="col-sm-25 col-xs-15">
 					<label>* Teléfono:</label>
 					<input type="tel" id="telefono" class="form-control" value="{$TELEFONO}">
-					<small>Número de teléfono a 10 dígitos con clave LADA</small>
 				</div>
-				<div class="col-sm-75 col-xs-15">
+				<div class="col-sm-25 col-xs-15">
 					<label>Horario:</label>
 					<input type="text" id="horario" maxlength="20" class="form-control" value="{$HORARIO}" placeholder="Full time, De 8am a 2pm ...">
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-sm-25 col-xs-15">
+					<label>Color de ojos:</label>
+					<input type="text" id="color_de_ojos" class="form-control" placeholder="cafés, negros, verdes ..." value="{$COLOR_DE_OJOS}">
+				</div>
+				<div class="col-sm-25 col-xs-15">
+					<label>Preferencia:</label>
+					<select class="form-control" id="preferencia">
+						{$PREFERENCIA}
+					</select>
+				</div>
+				<div class="col-sm-25 col-xs-15">
+					<label>Idiomas:</label>
+					<input type="text" class="form-control" id="idiomas" value="{$IDIOMAS}" placeholder="español, inglés ...">
+				</div>
+				<div class="col-sm-25 col-xs-15">
+					<label>¿Estás dispuesta a viajar?</label>
+					<div id="radioTravel">
+						<label><input name="viajes" checked type="radio"><span>Si <i class="fa fa-check"></i></span></label>
+						<label><input name="viajes" type="radio"><span>No <i class="fa fa-check"></i></span></label>
+					</div>
+				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Estatura:</label>
 					<input type="text" id="estatura" class="form-control" placeholder="mts" value="{$ESTATURA}">
@@ -65,38 +85,18 @@
 					<label>Cadera:</label>
 					<input type="text" id="cadera" class="form-control" placeholder="cm" value="{$CADERA}">
 				</div>
-
-				<div class="col-sm-75 col-xs-15">
-					<label>Color de ojos:</label>
-					<input type="text" id="color_de_ojos" class="form-control" placeholder="cafés, negros, verdes ..." value="{$COLOR_DE_OJOS}">
-				</div>
-				<div class="col-sm-75 col-xs-15">
-					<label>Preferencia:</label>
-					<select class="form-control" id="preferencia">
-						{$PREFERENCIA}
-					</select>
-				</div>
-				<div class="col-sm-75 col-xs-15">
-					<label>Idiomas:</label>
-					<input type="text" class="form-control" id="idiomas" value="{$IDIOMAS}" placeholder="español, inglés ...">
-				</div>
-				<div class="col-sm-75 col-xs-15">
-					<label>¿ Estás dispuesta a viajar ?</label>
-					<div id="radioTravel">
-						<label><input name="viajes" checked type="radio"><span>Si <i class="fa fa-check"></i></span></label>
-						<label><input name="viajes" type="radio"><span>No <i class="fa fa-check"></i></span></label>
-					</div>
-				</div>
 				<div id="inputSocialNet" class="col-xs-15">
 					<label>Redes sociales:</label>
-					<div>
-						<span><i class="fa fa-facebook fa-2x"></i></span><input type="text" class="form-control" placeholder="Facebook">
-					</div>
-					<div>
-						<span><i class="fa fa-twitter fa-2x"></i></span><input type="text" class="form-control" placeholder="Twitter">
-					</div>
-					<div>
-						<span><i class="fa fa-instagram fa-2x"></i></span><input type="text" class="form-control" placeholder="Instagram">
+					<div class="row">
+						<div class="col-xs-15 col-sm-5">
+							<span><i class="fa fa-facebook fa-2x"></i></span><input type="text" class="form-control" placeholder="Facebook">
+						</div>
+						<div class="col-xs-15 col-sm-5">
+							<span><i class="fa fa-twitter fa-2x"></i></span><input type="text" class="form-control" placeholder="Twitter">
+						</div>
+						<div class="col-xs-15 col-sm-5">
+							<span><i class="fa fa-instagram fa-2x"></i></span><input type="text" class="form-control" placeholder="Instagram">
+						</div>
 					</div>
 				</div>
 				<div id="descripcionCont" class="col-xs-15 tx-c">

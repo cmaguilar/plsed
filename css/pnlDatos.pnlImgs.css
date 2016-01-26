@@ -1,8 +1,25 @@
 body{
 	overflow-x: hidden; 
 	background-color: #FFE5E6;
+	/* background de los radios y de los input addon: #F9C5C8; */
+	/* background de btn-pink: #FFDBDD; */
+	/* border-color de btn-pink: #FDCCCD; */
 }
+
+.btn-round{
+	background-color: rgba(0,0,0,0.3);
+    border-radius: 33px;
+    color: #FFFFFF !important;
+    margin: 0 5px 5px;
+}
+
+
 #MpanelData a:hover{color: #DA8888;}
+
+#MpanelData small{
+	line-height: 1.2;
+	display: block;
+}
 
 #MpanelPhoto > h4, #MpanelData > h4{
 	margin: 0;
@@ -172,35 +189,44 @@ input.panelImgOptTg:checked + .panelImgOpt{
 
 
 #MpanelData .col-xs-15{
-	padding: 0 15px;
+	padding: 0 10px;
     margin-bottom: 15px;
 }
 
+#MpanelData .row{
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+#inputSocialNet > .row{
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+
 #MpanelData label{
 	font-weight: 500;
-	margin-bottom: 3px;
+	margin-bottom: 4px;
     display: inline-block;
 }
 
-#inputSocialNet > div{
-	margin-bottom: 10px;
-}
-
-#inputSocialNet > div > input{
+#inputSocialNet > .row > div > input{
 	width: calc(100% - 34px);
 	display: inline-block;
 	border-radius: 0 4px 4px 0;
 	border-left: none;
 }
 
-#inputSocialNet > div > span{
+
+
+#inputSocialNet > .row > div > span{
 	height: 34px;
 	width: 34px;
 	padding: 7px 0;
 	display: block;
 	float: left;
 	text-align: center;
-	background-color: #F9C5C8;
+	background-color: #FDCCCD;
 	color: #555555;
     border-radius: 4px 0 0 4px;
 }
@@ -225,15 +251,14 @@ input.panelImgOptTg:checked + .panelImgOpt{
 #radioTravel > label > span{
 	border-radius: 50px;
 	padding: 5px 20px;
-	background-color: #F9C5C8;
+	background-color: #FDCCCD;
 
 }
 
-#descripcion ~ span > table{margin: auto;}
 #descripcionCont small{
 	line-height: 1;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
@@ -279,3 +304,43 @@ input.panelImgOptTg:checked + .panelImgOpt{
 
 #verifyName.available > input,
 #verifyName.notAvailable > input{padding-right: 30px;}
+
+
+
+
+
+
+#mce_editor_0.mceEditorIframe{
+	width: 100%!important;
+	height: 100% !important;
+    display: block;
+}
+#mce_editor_0_parent.mceEditorContainer > table{
+	min-width: 100%;
+	min-height: 450px;
+}
+#mce_editor_0_toolbar{
+	text-align: center;
+	background-color: #FDCCCD;
+}
+#mce_editor_0_parent a.mceButtonNormal img, #mce_editor_0_parent a.mceButtonSelected img {
+    border-color: #FDCCCD !important;
+}
+#mce_editor_0_parent span.mceMenuButton img, #mce_editor_0_parent span.mceMenuButtonSelected img {
+    border-color: #FDCCCD;
+    margin-left: 1px;
+}
+
+#mce_editor_0_parent .mceStatusbarBottom{background-color: #FDCCCD;}
+
+#mce_editor_0_parent > table{
+	margin: auto;
+	border-color: #FBBCBD;
+}
+
+
+
+
+
+
+
