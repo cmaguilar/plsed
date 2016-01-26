@@ -138,6 +138,65 @@
 <TEMPLATE HEAD>
 	<script language="javascript">
 		var nomPub = '{$NOMBRE_A_PUBLICAR}';
-		console.log(nomPub);
 	</script>
 </TEMPLATE>
+
+<TEMPLATE statusSinAutorizar>
+Tu información aún no ha sido verificada y autorizada por el personal de Seductoras.com.mx<br />
+El proceso de verificación de perfil se hace una sola vez, ya autorizada podrás cambiar la información y fotografías en tiempo real cuantas veces lo desees.<br />
+Gracias por tu paciencia.</TEMPLATE>
+
+<TEMPLATE statusInactiva>
+Tu perfil se encuentra inactivo, esto quiere decir que no está visible a la gente que visita el portal, puedes escribir a <a href="mailto:chicas@seductoras.com.mx">chicas@seductoras.com.mx</a> para saber la causa.<br />
+Gracias.
+</TEMPLATE>
+
+<TEMPLATE statusRechazada>
+Tu perfil fué rechazado, para aclaraciones envia un email a <a href="mailto:chicas@seductoras.com.mx">chicas@seductoras.com.mx</a> para saber la causa.<br />
+Gracias.
+</TEMPLATE>
+
+<TEMPLATE statusActiva>
+  <select name="status" id="status">
+    <option value="activa" {$ACTIVA}>Activa</option>
+    <option value="vacaciones" {$VACACIONES}>Vacaciones</option>
+  </select>
+</TEMPLATE>
+
+<TEMPLATE statusADMIN>
+  <select size="1" name="status" id="status">
+    <option value="activa" {$ACTIVA}>Activa</option>
+    <option value="vacaciones" {$VACACIONES}>Vacaciones</option>
+    <option value="inactiva" {$INACTIVA}>Inactiva</option>
+    <option value="sin autorizar" {$SINAUTORIZAR}>Sin autorizar</option>
+    <option value="sin confirmar" {$SINCONFIRMAR}>Sin confirmar</option>
+    <option value="rechazada" {$RECHAZADA}>Rechazada</option>
+  </select>
+</TEMPLATE>
+
+<TEMPLATE statusSinConfirmar>
+	Por favor confirma tu registro !!!
+</TEMPLATE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

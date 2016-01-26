@@ -16,13 +16,20 @@ var delay = (function(){
 $(function() {
 
 	$('input#nombre_a_publicar').keyup(function() {
-		delay(function() {
-			console.log($('input#nombre_a_publicar').val());
-		}, 1000);
+		if($('input#nombre_a_publicar').val() != nomPub){
+			delay(function() {
+				nomPub = $('input#nombre_a_publicar').val();
+				$('div#verifyName').addClass('verifying');
+				$.post('/?j=vNombre', {nom: $('input#nombre_a_publicar').val()}, function(d) {
+					$('div#verifyName').removeClass('verifying').removeClass('notAvailable').removeClass('available').addClass(d[0]?'notAvailable':'available');
+				});
+			}, 700);
+		}
 	});
 
 	$('select#estado').change(function() {
 		if ($(this).val() > 0) {
+			$('select#ciudad').html('<option value="0">cargando ...</option>');
 			$.post('./?j=eCius', {edo: $(this).val()}, function(d){
 				$('select#ciudad').html('<option value="0">selecciona ...</option>');
 				$.each(d, function(i, v) {
