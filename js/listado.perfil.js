@@ -5,7 +5,7 @@ var vLogued = function(logued) {
 		document.getElementById('logued').style.display = 'block';
 		document.getElementById('LogReg').style.display = 'none';
 		if (logued.tp === 'chk') document.getElementById('photo-bar').style.backgroundImage = 'url(\'/fotosv2/'+logued.id+'/ico/'+logued.img+'\')';
-		document.getElementsByTagName('body')[0].className = 'editable logged';
+		document.getElementsByTagName('body')[0].className = idChk==logued.id?'editable logged':'logged';
 	}else {
 		document.getElementById('login').value = '';
 		document.getElementById('pass').value = '';
@@ -40,6 +40,7 @@ window.addEventListener('load', function() {
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 					var ret = JSON.parse(xmlhttp.responseText);
+					console.log(ret);
 					if (ret.aut > 0) {
 						document.getElementById('errMessaje').innerText = 'Bienvenid@ '+ret.nfo.name;
 						vLogued({'id': ret.nfo.id, 'tp': (ret.aut === 1 ? 'chk' : 'pkt'), 'img': ret.nfo.img});

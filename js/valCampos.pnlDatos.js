@@ -1,3 +1,46 @@
-$(document).ready(function(){
-	console.log('En consola !!!');
+/* ----------------------------------------------------------------------
+Función del script:
+	Validación de campos y funciones específicas de la forma de modificación de datos del perfil de la chk
+
+Desarrollado por: Charlie
+Copyright (c) 2016 Seductoras TEAM Todos los derechos reservados.
+*/
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
+$(function() {
+
+	$('input#nombre_a_publicar').keyup(function() {
+		delay(function() {
+			console.log($('input#nombre_a_publicar').val());
+		}, 1000);
+	});
+
+	$('select#estado').change(function() {
+		if ($(this).val() > 0) {
+			$.post('./?j=eCius', {edo: $(this).val()}, function(d){
+				$('select#ciudad').html('<option value="0">selecciona ...</option>');
+				$.each(d, function(i, v) {
+					$('select#ciudad').append('<option value="'+v[0]+'">'+v[1]+'</option>');
+				});
+	    	});
+		}else $('select#ciudad').html('<option val="0">-----</option>');
+	});
+
+	$('#telefono').mask("(99) 9999-9999").change(function() {
+		var ftl = $(this).val().substring(0, 3);
+		if (ftl == '(55' || ftl == '(33' || ftl == '(81') $(this).mask("(99) 9999-9999");
+		else $(this).mask("(999) 999-9999");
+	});
+
+	$('#estatura').mask("9.99 mts", {autoclear: false});
+	$('#peso').mask("999 kgs", {autoclear: false});
+	$('#busto').mask("999 cms", {autoclear: false});
+	$('#cintura').mask("999 cms", {autoclear: false});
+	$('#cadera').mask("999 cms", {autoclear: false});	
 });

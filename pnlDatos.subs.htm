@@ -1,11 +1,11 @@
 <TEMPLATE contenidos>
 		<form id="MpanelData">
-			<h4>Mis datos a publicar en mi perfil de Seductoras.com.mx</h4>
+			<h4>Mis datos a publicar en mi perfil de Seductoras</h4>
 			<div class="row">
 				<div class="col-sm-75 col-xs-15">
 					<label>* Nombre a mostrar:</label>
 					<div id="verifyName">
-						<input name="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
+						<input name="nombre_a_publicar" id="nombre_a_publicar" type="text" class="form-control" value="{$NOMBRE_A_PUBLICAR}">
 						<i class="fa fa-check"></i>
 						<i class="fa fa-times"></i>
 						<a href="#"><i class="fa fa-search"></i> verificar nombre disponible</a>
@@ -22,63 +22,63 @@
 			<div class="row">
 				<div class="col-sm-75 col-xs-15">
 					<label>* Estado donde te encuentras:</label>
-					<select class="form-control">
+					<select class="form-control" id="estado">
 						<option value="0">selecciona ...</option>
 						{$ESTADOS}
 					</select>
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>* Ciudad donde te encuentras:</label>
-					<select class="form-control">
+					<select class="form-control" id="ciudad">
 						<option value="0">selecciona ...</option>
 						{$CIUDADES}
 					</select>
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>* Teléfono:</label>
-					<input type="tel" class="form-control" maxlength="10">
-					<small>solo admite números, guiones y paréntesis</small>
+					<input type="tel" id="telefono" class="form-control" value="{$TELEFONO}">
+					<small>Número de teléfono a 10 dígitos con clave LADA</small>
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>Horario:</label>
-					<input type="text" class="form-control">
+					<input type="text" id="horario" maxlength="20" class="form-control" value="{$HORARIO}" placeholder="Full time, De 8am a 2pm ...">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 col-xs-15">
 					<label>Estatura:</label>
-					<input type="text" class="form-control" placeholder="mts" value="{$ESTATURA}">
+					<input type="text" id="estatura" class="form-control" placeholder="mts" value="{$ESTATURA}">
 				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Peso:</label>
-					<input type="text" class="form-control" placeholder="kgs">
+					<input type="text" id="peso" class="form-control" placeholder="kgs" value="{$PESO}">
 				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Busto:</label>
-					<input type="text" class="form-control" placeholder="cm">
+					<input type="text" id="busto" class="form-control" placeholder="cm" value="{$BUSTO}">
 				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Cintura:</label>
-					<input type="text" class="form-control" placeholder="cm">
+					<input type="text" id="cintura" class="form-control" placeholder="cm" value="{$CINTURA}">
 				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Cadera:</label>
-					<input type="text" class="form-control" placeholder="cm">
+					<input type="text" id="cadera" class="form-control" placeholder="cm" value="{$CADERA}">
 				</div>
 
 				<div class="col-sm-75 col-xs-15">
 					<label>Color de ojos:</label>
-					<input type="text" class="form-control" placeholder="">
+					<input type="text" id="color_de_ojos" class="form-control" placeholder="cafés, negros, verdes ..." value="{$COLOR_DE_OJOS}">
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>Preferencia:</label>
-					<select class="form-control">
-						<option>Hombres y mujeres</option>
+					<select class="form-control" id="preferencia">
+						{$PREFERENCIA}
 					</select>
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>Idiomas:</label>
-					<input type="text" class="form-control">
+					<input type="text" class="form-control" id="idiomas" value="{$IDIOMAS}" placeholder="español, inglés ...">
 				</div>
 				<div class="col-sm-75 col-xs-15">
 					<label>¿ Estás dispuesta a viajar ?</label>
@@ -102,7 +102,7 @@
 				<div id="descripcionCont" class="col-xs-15 tx-c">
 					<label>Descripción adicional de tu perfil:</label><br />
 					<small>(Describe con ingenio la información adicional que deseas agregar a tu perfil,<br />recuerda que lo que pones aquí influye en el éxito para hacer contactos con usuarios del portal)</small>
-					<textarea name="descripcion" id="descripcion"></textarea>
+					<textarea name="descripcion" id="descripcion">{$DESCRIPCION}</textarea>
 				</div>
 				<div class="tx-c col-xs-15" style="padding-top: 15px;">
 					<button type="submit" class="btn btn-default">Hacer Cambios</button>
@@ -134,3 +134,10 @@
 
 <TEMPLATE option>
 	<option value="{$VAL}" {$SELECTED}>{$TXT}</option></TEMPLATE>
+
+<TEMPLATE HEAD>
+	<script language="javascript">
+		var nomPub = '{$NOMBRE_A_PUBLICAR}';
+		console.log(nomPub);
+	</script>
+</TEMPLATE>
