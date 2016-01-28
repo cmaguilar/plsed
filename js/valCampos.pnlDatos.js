@@ -52,5 +52,21 @@ $(function() {
 	$('#peso').mask("999 kgs", {autoclear: false});
 	$('#busto').mask("999 cms", {autoclear: false});
 	$('#cintura').mask("999 cms", {autoclear: false});
-	$('#cadera').mask("999 cms", {autoclear: false});	
+	$('#cadera').mask("999 cms", {autoclear: false});
+
+	$('#MpanelData').submit(function(e) {
+		e.preventDefault();
+
+		var parentBody = window.parent.document.body;
+		$(parentBody).removeClass('modalPanel');
+		$('#vHorario', parentBody).html('FULL TIME');
+		// parent.document.body.className = '';
+		$('#sbmt').attr('disabled', 'disabled');
+		$.post('./?j=pnlDatos', $(this).serialize(), function(d) {
+			console.log(d);
+			// bootbox.alert(d[0] == 'update'?'Se actualizó la información del usuario':'Se registró el usuario en el sistema', function() {
+			// 	location.href = '/?llv='+llv;
+			// });
+		}, "json");		
+	});
 });
