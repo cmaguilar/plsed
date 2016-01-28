@@ -7,16 +7,20 @@
 		</div>
 		<form id="MpanelData">
 			<div class="row">
-				<div class="col-sm-75 col-xs-15">
+				<div class="col-sm-5 col-xs-15">
 					<label>* Nombre a mostrar:</label>
 					<div id="verifyName">
-						<input name="nombre_a_publicar" id="nombre_a_publicar" type="text" class="form-control valida" value="{$NOMBRE_A_PUBLICAR}">
+						<input name="nombre_a_publicar" id="nombre_a_publicar" type="text" class="form-control valida" value="{$NOMBRE_A_PUBLICAR}" style="font-weight: bold;">
 						<i class="fa fa-check"></i>
 						<i class="fa fa-times"></i>
 						<span><i class="fa fa-spinner"></i> verificando nombre disponible</span>
 					</div>
 				</div>
-				<div class="col-sm-75 col-xs-15">
+				<div class="col-sm-5 col-xs-15">
+					<label>* Teléfono:</label>
+					<input type="tel" id="telefono" name="telefono" class="form-control" value="{$TELEFONO}" {$TELREADONLY}>
+				</div>
+				<div class="col-sm-5 col-xs-15">
 					<label>Status:</label>
 					<div>
 					{$STATUSPERFIL}
@@ -39,18 +43,21 @@
 					</select>
 				</div>
 				<div class="col-sm-25 col-xs-15">
-					<label>* Teléfono:</label>
-					<input type="tel" id="telefono" name="telefono" class="form-control" value="{$TELEFONO}" {$TELREADONLY}>
-				</div>
-				<div class="col-sm-25 col-xs-15">
 					<label>Horario:</label>
 					<input type="text" id="horario" name="horario" maxlength="20" class="form-control" value="{$HORARIO}" placeholder="Full time, De 8am a 2pm ...">
+				</div>
+				<div class="col-sm-25 col-xs-15">
+					<label>¿Estás dispuesta a viajar?</label>
+					<div id="radioTravel">
+						<label><input name="viajes" {$SiVIAJES} value="Si" type="radio"><span>Si <i class="fa fa-check"></i></span></label>
+						<label><input name="viajes" {$NoVIAJES} value="No" type="radio"><span>No <i class="fa fa-check"></i></span></label>
+					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-25 col-xs-15">
-					<label>Color de ojos:</label>
-					<input type="text" id="color_de_ojos" name="color_de_ojos" class="form-control" placeholder="cafés, negros, verdes ..." value="{$COLOR_DE_OJOS}">
+					<label>Idiomas:</label>
+					<input type="text" class="form-control" id="idiomas" name="idiomas" value="{$IDIOMAS}" placeholder="español, inglés ...">
 				</div>
 				<div class="col-sm-25 col-xs-15">
 					<label>Preferencia:</label>
@@ -59,15 +66,18 @@
 					</select>
 				</div>
 				<div class="col-sm-25 col-xs-15">
-					<label>Idiomas:</label>
-					<input type="text" class="form-control" id="idiomas" name="idiomas" value="{$IDIOMAS}" placeholder="español, inglés ...">
+					<label>Tez:</label>
+					<select class="form-control" id="tez" name="tez">
+						<option value=""></option>}
+						{$TEZ}
+					</select>
 				</div>
 				<div class="col-sm-25 col-xs-15">
-					<label>¿Estás dispuesta a viajar?</label>
-					<div id="radioTravel">
-						<label><input name="viajes" {$SiVIAJES} value="Si" type="radio"><span>Si <i class="fa fa-check"></i></span></label>
-						<label><input name="viajes" {$NoVIAJES} value="No" type="radio"><span>No <i class="fa fa-check"></i></span></label>
-					</div>
+					<label>Color de ojos:</label>
+					<select class="form-control" id="ojos" name="ojos">
+						<option value=""></option>}
+						{$OJOS}
+					</select>
 				</div>
 				<div class="col-sm-3 col-xs-15">
 					<label>Estatura:</label>
@@ -89,7 +99,7 @@
 					<label>Cadera:</label>
 					<input type="text" id="cadera" name="cadera" class="form-control" placeholder="cm" value="{$CADERA}">
 				</div>
-				<div id="inputSocialNet" class="col-xs-15">
+<!-- 				<div id="inputSocialNet" class="col-xs-15">
 					<label>Redes sociales:</label>
 					<div class="row">
 						<div class="col-xs-15 col-sm-5">
@@ -103,7 +113,7 @@
 						</div>
 					</div>
 				</div>
-
+ -->
 				<div class="tx-c col-xs-15" style="padding-top: 15px;">
 					<button type="submit" id="sbmt" class="btn btn-default">Hacer Cambios</button>
 				</div>
