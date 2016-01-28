@@ -40,7 +40,7 @@
 				</div>
 				<div class="col-sm-25 col-xs-15">
 					<label>* Teléfono:</label>
-					<input type="tel" id="telefono" name="telefono" class="form-control" value="{$TELEFONO}">
+					<input type="tel" id="telefono" name="telefono" class="form-control" value="{$TELEFONO}" {$TELREADONLY}>
 				</div>
 				<div class="col-sm-25 col-xs-15">
 					<label>Horario:</label>
@@ -123,18 +123,17 @@
 </TEMPLATE>
 
 <TEMPLATE statusSinAutorizar>
-Tu información aún no ha sido verificada y autorizada por el personal de Seductoras.com.mx<br />
-El proceso de verificación de perfil se hace una sola vez, ya autorizada podrás cambiar la información y fotografías en tiempo real cuantas veces lo desees.<br />
-Gracias por tu paciencia.</TEMPLATE>
+Tu información aún no ha sido verificada y autorizada por el nuestro equipo para publicarse en el portal<br />
+El proceso de verificación de perfil se hace una sola vez.<br />
+Gracias por tu paciencia.
+</TEMPLATE>
 
 <TEMPLATE statusInactiva>
-Tu perfil se encuentra inactivo, esto quiere decir que no está visible a la gente que visita el portal, puedes escribir a <a href="mailto:chicas@seductoras.com.mx">chicas@seductoras.com.mx</a> para saber la causa.<br />
-Gracias.
+Tu perfil se encuentra inactivo, esto quiere decir que no está visible a la gente que visita el portal.
 </TEMPLATE>
 
 <TEMPLATE statusRechazada>
-Tu perfil fué rechazado, para aclaraciones envia un email a <a href="mailto:chicas@seductoras.com.mx">chicas@seductoras.com.mx</a> para saber la causa.<br />
-Gracias.
+Tu perfil fué rechazado por no cumplir con las políticas de uso del portal.
 </TEMPLATE>
 
 <TEMPLATE statusActiva>
