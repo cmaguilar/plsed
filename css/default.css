@@ -242,7 +242,7 @@ a{text-decoration: none;}
   background-color: #FFFFFF;
   height: 34px;
   width: 100%;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #DCAAAA;
   border-radius: 4px;
   outline: none;
   color: #8B042D;
@@ -256,11 +256,8 @@ a{text-decoration: none;}
 }
 
 textarea.form-control{padding-top: 5px;}
-/*.form-control::-webkit-input-placeholder {color: #B36D6D;}
-.form-control:-moz-placeholder {color: #B36D6D;}*/
-
-.form-control::-webkit-input-placeholder {color: #DDDDDD;}
-.form-control:-moz-placeholder {color: #DDDDDD;}
+.form-control::-webkit-input-placeholder {color: #DCAAAA;}
+.form-control:-moz-placeholder {color: #DCAAAA;}
 
 #vacio,
 .vi-m,
@@ -830,6 +827,56 @@ footer{
 /*=========================*/
 /*=======  Tooltip  =======*/
 /*=========================*/
+
+.tool-tip{position: relative;}
+
+  .tool-tip .tool-msj{
+    position: absolute;
+      width: 160px;
+      left: 50%;
+      margin-left: -80px;
+      bottom: calc(100% + 5px);
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+      -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  }
+
+  .tool-tip .tool-msj > div{
+    display: inline-block;
+      padding: 5px 10px;
+      background: rgba(0,0,0,0.8);
+      border-radius: 4px;
+      color: #FFF;
+  }
+
+  .tool-tip .tool-msj:after{
+    content: '';
+    margin-left: -6px;
+      margin-bottom: -12px;
+      border: 6px solid transparent;
+      border-top-color: rgba(0,0,0,0.7);
+      z-index: 15;
+      background: transparent;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      
+  }
+
+  .tool-tip:hover .tool-msj{
+    bottom: calc(100% + 10px);
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
 
 
 
