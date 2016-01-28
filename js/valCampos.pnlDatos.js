@@ -5,18 +5,30 @@ Función del script:
 Desarrollado por: Charlie
 Copyright (c) 2016 Seductoras TEAM Todos los derechos reservados.
 */
-var delay = (function(){
-  var timer = 0;
-  return function(callback, ms){
-    clearTimeout (timer);
-    timer = setTimeout(callback, ms);
-  };
-})();
+
+
+// function soloAcepta(cadena, checkOK) {
+// 	var allValid = true;
+// 	var allNum = '';
+// 	for (var i = 0;  i < cadena.length;  i++) {
+// 		console.log(cadena.charAt(i));
+// 		var ch = cadena.charAt(i);
+// 		for (var j = 0;  j < checkOK.length;  j++) if (ch == checkOK.charAt(j)) break;
+// 		if (j == checkOK.length) {
+// 			allValid = false;
+// 			break;
+// 		}
+// 		allNum += ch;
+// 	}
+// 	if (!allValid) false;
+// 	return true;
+// }
 
 $(function() {
 
 	$('input#nombre_a_publicar').keyup(function() {
-		if($('input#nombre_a_publicar').val() != nomPub){
+		// if (!soloAcepta(document.getElementById('nombre_a_publicar').value, 'ABCabc')) console.log('No válido ...');
+		if ($('input#nombre_a_publicar').val() !== nomPub) {
 			delay(function() {
 				nomPub = $('input#nombre_a_publicar').val();
 				$('div#verifyName').addClass('verifying');
