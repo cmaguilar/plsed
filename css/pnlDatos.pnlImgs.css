@@ -291,8 +291,10 @@ input.panelImgOptTg:checked + .panelImgOpt{
 
 #verifyName.available:after{content: 'nombre disponible';}
 #verifyName.available.verifying:after{content: '';}
-#verifyName.notAvailable:after{content: 'escoja otro nombre por favor';}
+#verifyName.notAvailable:after{content: 'teclea otro nombre por favor';}
 #verifyName.notAvailable.verifying:after{content: '';}
+#verifyName.notEmpty:after{content: 'teclea un nombre por favor';}
+#verifyName.notEmpty.verifying:after{content: '';}
 
 #verifyName.available > input,
 #verifyName.notAvailable > input{padding-right: 30px;}

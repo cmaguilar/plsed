@@ -5,35 +5,26 @@ Función del script:
 Desarrollado por: Charlie
 Copyright (c) 2016 Seductoras TEAM Todos los derechos reservados.
 */
-
-
-// function soloAcepta(cadena, checkOK) {
-// 	var allValid = true;
-// 	var allNum = '';
-// 	for (var i = 0;  i < cadena.length;  i++) {
-// 		console.log(cadena.charAt(i));
-// 		var ch = cadena.charAt(i);
-// 		for (var j = 0;  j < checkOK.length;  j++) if (ch == checkOK.charAt(j)) break;
-// 		if (j == checkOK.length) {
-// 			allValid = false;
-// 			break;
-// 		}
-// 		allNum += ch;
-// 	}
-// 	if (!allValid) false;
-// 	return true;
-// }
-
 $(function() {
+	$('input#nombre_a_publicar').keypress(function (e) {
+		var theVal = $(this).val()+String.fromCharCode(e.keyCode);
+		$(this).val(theVal.match(/([\ñ\Ñ\w\d\.\-\_\*\°\s])+/g));
+		e.preventDefault();
+	});
 
 	$('input#nombre_a_publicar').keyup(function() {
-		// if (!soloAcepta(document.getElementById('nombre_a_publicar').value, 'ABCabc')) console.log('No válido ...');
+		if ($.trim($('input#nombre_a_publicar').val()) == '') {
+			document.getElementById('verifyName').className = 'notEmpty';
+			return false;
+		}
+
 		if ($('input#nombre_a_publicar').val() !== nomPub) {
 			delay(function() {
 				nomPub = $('input#nombre_a_publicar').val();
 				$('div#verifyName').addClass('verifying');
 				$.post('/?j=vNombre', {nom: $('input#nombre_a_publicar').val()}, function(d) {
-					$('div#verifyName').removeClass('verifying').removeClass('notAvailable').removeClass('available').addClass(d[0]?'notAvailable':'available');
+					document.getElementById('verifyName').className = d[0]?'notAvailable':'available';
+					// $('div#verifyName').removeClass('verifying').removeClass('notAvailable').removeClass('available').addClass(d[0]?'notAvailable':'available');
 				});
 			}, 700);
 		}
