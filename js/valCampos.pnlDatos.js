@@ -5,6 +5,7 @@ Función del script:
 Desarrollado por: Charlie
 Copyright (c) 2016 Seductoras TEAM Todos los derechos reservados.
 */
+var parentBody = window.parent.document.body;
 $(function() {
 	$('input#nombre_a_publicar').keypress(function (e) {
 		var theVal = $(this).val()+String.fromCharCode(e.keyCode);
@@ -57,12 +58,10 @@ $(function() {
 	$('#MpanelData').submit(function(e) {
 		e.preventDefault();
 
-		var parentBody = window.parent.document.body;
-		$(parentBody).removeClass('modalPanel');
-		$('#vHorario', parentBody).html('FULL TIME');
-		// parent.document.body.className = '';
-		$('#sbmt').attr('disabled', 'disabled');
+		$('#sbmt').attr('disabled', 'disabled').html('...');
 		$.post('./?j=pnlDatos', $(this).serialize(), function(d) {
+			$(parentBody).removeClass('modalPanel');
+			$('#detalles', parentBody).html(d.gen);
 			console.log(d);
 			// bootbox.alert(d[0] == 'update'?'Se actualizó la información del usuario':'Se registró el usuario en el sistema', function() {
 			// 	location.href = '/?llv='+llv;

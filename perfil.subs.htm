@@ -23,12 +23,10 @@
 						</a>
 						<!-- /img/default-seductora.png -->
 						<a href="#"><img id="f-principal" src="/static/img/nada2.png" class="img-c imgModal" data-href="{$IMGPERFIL}" style="background-image: url('{$IMGPERFIL}');"></a>
-					
 					</div>
 					<div class="vi-x"><a href="#galeria"><i class="fa fa-picture-o fa-3x"></i></a></div>
 					<div class="vi-x"><a href="#social-page"><i class="fa fa-user fa-3x"></i></a></div>
 				</div>
-
 				<div id="icons" class="fl-r hi-x">
 					<span id="favory" class="tool-tip">
 						<i class="fa fa-heart fa-2x"></i>
@@ -67,22 +65,13 @@
 
 			<!--========== DATOS Y FOTOS ===========-->
 			<div class="tx-c">
-				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$PUROTELEFONO}</small></h3>
+				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$TELEFONO}</small></h3>
 				<a href="#" onClick="window.open('/?a=pnlDatos&llv='+llvLg, 'socialIFrame');" id="edit-data" class="hi-x btn-circle">
 					<i class="fa fa-pencil fa-2x"></i>
 					<div>&nbsp;&nbsp;Editar datos</div>
 				</a>
 				<div id="detalles" class="row">
-					<div>Ciudad</div><div>{$CIUDAD}</div>
-					{$EDAD}
-					{$PESO}
-					{$ESTATURA}
-					{$MEDIDAS}
-					{$VIAJES}
-					{$IDIOMAS}
-					{$HORARIO}
-					{$TELEFONO}
-					{$WEBCHK}
+					{$GENERALES}
 				</div>
 				
 				<div id="galeria">
@@ -279,6 +268,3 @@
 
 <TEMPLATE fotosMin>
 	<div class="mifoto"><img src="{$FOTOMIN}" data-href="{$FOTOHIGH}"></div></TEMPLATE>
-
-<TEMPLATE camposFicha>
-	<div>{$CAMPO}</div><div id="{$IDCAMPO}">{$VALOR}</div></TEMPLATE>
