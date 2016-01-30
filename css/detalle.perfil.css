@@ -173,6 +173,7 @@ body.affix #portada{
 }
 
 #galeria{
+	position: relative;
 	width: 100%;
 	clear: both;
 	padding: 15px 0;
@@ -271,37 +272,44 @@ width: 100%;}
 #socialIframe:empty + #profileFrame > #social-page{display: block;}
 
 
+-webkit-@keyframes zoomImg{
+	from {transform: scale(1,1);}
+	to   {transform: scale(1.2,1.2);}
+}
+-moz-@keyframes zoomImg{
+	from {transform: scale(1,1);}
+	to   {transform: scale(1.2,1.2);}
+}
 @keyframes zoomImg{
 	from {transform: scale(1,1);}
 	to   {transform: scale(1.2,1.2);}
 }
 
+
 #social-page > .media.highlight > .media-left > a > img{
-	animation: zoomImg 0.3s 4 alternate ease-in-out;
+	-webkit-animation: zoomImg 0.3s 4 alternate ease-in-out;
+	   -moz-animation: zoomImg 0.3s 4 alternate ease-in-out;
+		    animation: zoomImg 0.3s 4 alternate ease-in-out;
 }
 
-/*.comentarios > .media{
-	box-shadow: 0 0 0 #FF6B6B inset;
-	transition: box-shadow 0.5s linear;
+-webkit-@keyframes highlightCom{
+	from {background-color: transparent;}
+	to   {background-color: #FBB0B0;}
 }
-
-.comentarios > .media.highlight{
-	box-shadow: 0 0 15px #FF6B6B inset;
-	
-}*/
-
-/*.comentarios > .media{
-	background-color: transparent;
-	transition: background-color 0.5s ease-in-out;
-}*/
-
+-moz-@keyframes highlightCom{
+	from {background-color: transparent;}
+	to   {background-color: #FBB0B0;}
+}
 @keyframes highlightCom{
 	from {background-color: transparent;}
 	to   {background-color: #FBB0B0;}
 }
 
+
 .comentarios > .media.highlight{
-	animation: highlightCom 0.5s 2 alternate ease-in-out;
+	-webkit-animation: highlightCom 0.5s 2 alternate ease-in-out;
+	   -moz-animation: highlightCom 0.5s 2 alternate ease-in-out;
+	        animation: highlightCom 0.5s 2 alternate ease-in-out;
 	
 }
 
@@ -341,11 +349,6 @@ width: 100%;}
 }
 
 #publicador > .media-body{padding-top: 5px;}
-
-/*
-#publicador{display: none;}
-.editable #publicador{display: block;}
-*/
 
 #social-page > .media > .media-body > .media-heading{
 	margin-top: 5px;
@@ -443,6 +446,29 @@ width: 100%;}
 	visibility: hidden;
 	opacity: 0;
 }
+
+#orderByTagsButt{
+	position: absolute;
+	opacity: 0;	
+}
+
+#orderByTagsCont:before{
+	content: '';
+	display: block;
+	width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #FFFFFF;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -7px;
+	margin-top: -7px;
+}
+
 
 #social-page .buttons > .toggle-btn > input:checked ~ span,
 #social-page .messagesTg:checked ~ .buttons .ver-com{ color: #DC7070; }/*#FF004B*/
@@ -664,33 +690,12 @@ width: 100%;}
 	
 }
 
-/*.sliderbutton{
-	padding: 6px;
-	min-width: 33px;
-	position: relative;
-	z-index: 8;
-	text-align: center;
-}*/
-
 .sliderbutton *{
 	cursor: pointer;
 }
 .chatOn #chat-btn{cursor: pointer;}
 #chat-btn.chatOn > i{color: #CDEB8B;}
 
-/*#edit-data > i, 
-#edit-gale > i{
-	display: inline-block;
-	margin-left: 3px;
-	margin-right: -3px;
-}*/
-
-/*.sliderbutton > i{
-	vertical-align: middle;
-	display: inline-block;
-	margin-left: 2px;
-	margin-right: -2px;
-}*/
 
 #chat-btn{margin-right: 15px;}
 
@@ -757,8 +762,6 @@ body.editable #edit-gale{
 
 .vacio #edit-portada{margin-top: 175px;}
 
-/*#misfotos{margin-top: 10px;}*/
-
 #sinfotos{
 	margin-top: 100px;
 	opacity: 0.2;
@@ -772,15 +775,58 @@ body.editable #edit-gale{
 	background-color: #FFE5E9;
 }
 
+#orderByTagsCont.hidden{display: none;}
+#orderByTagsCont{
+	background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    padding: 5px;
+    color: #666666;
+    z-index: 1;
+    font-size: 12px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    width: 170px;
+    left: 50%;
+    margin-left: -85px;
+    margin-top: 20px;
+    text-align: left;
+}
 
+body.editable #orderByTagsCont{
+	margin-left: -105px;
+}
 
+#orderByTagsCont > label{
+	padding: 2px 5px;
+    display: block;
+    border-radius: 4px;
+    margin-top: 3px;
+    background-color: #FDF4F5;
+    border: 1px solid #FBE5E8;
+}
+#orderByTagsCont > :first-child{margin-top: 0;}
 
-/*.tooltip:after{
-	content: attr(title);
-}*/
+#orderByTagsCont > label > input{
+	position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
 
+#orderByTagsCont > label > .fa-check{
+	display: none;
+    float: right;
+    margin-top: 2px;
+}
 
+#orderByTagsCont > label > input:checked + .fa-check {
+    display: block;
+}
 
+#orderByTagsButt:focus ~ #orderByTagsCont{display: block;}
 
 
 /*  Galeria e imagenes modales  */
@@ -952,48 +998,7 @@ body.modalPanel #modalPanel{
 							/*=======  Media Query  =======*/
 							/*=============================*/
 
-	.tool-tip{position: relative;}
-
-	.tool-tip .tool-msj{
-		position: absolute;
-	    width: 160px;
-	    left: 50%;
-	    margin-left: -80px;
-	    bottom: calc(100% + 5px);
-	    text-align: center;
-	    opacity: 0;
-	    visibility: hidden;
-	    pointer-events: none;
-	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	    font-weight: 500;
-	    -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-	    -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-	    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-	}
-
-	.tool-tip .tool-msj > div{
-		display: inline-block;
-	    padding: 5px 10px;
-	    background: rgba(0,0,0,0.8);
-	    border-radius: 4px;
-	    color: #FFF;
-	}
-
-	.tool-tip .tool-msj:after{
-		content: '';
-		margin-left: -6px;
-	    margin-bottom: -12px;
-	    border: 6px solid transparent;
-	    border-top-color: rgba(0,0,0,0.7);
-	    z-index: 15;
-	    background: transparent;
-	    position: absolute;
-	    left: 50%;
-	    bottom: 0;
-	    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-	    
-	}
+	
 
 @media (max-width: 768px){
 	#foto{height: 50px;}
@@ -1005,7 +1010,6 @@ body.modalPanel #modalPanel{
 
 	#foto{
 		width: 33.333% !important;
-		/*padding-top: 215px;*/
 		-webkit-transform: translateY(215px);
 		   -moz-transform: translateY(215px);
 		    -ms-transform: translateY(215px);
@@ -1118,12 +1122,7 @@ body.modalPanel #modalPanel{
 	.media-body:hover > .deleteNotification > i, .media-body:hover > .commentStatus > i{display: block;}
 
 
-	/* Tooltip */
-	.tool-tip:hover .tool-msj{
-		bottom: calc(100% + 10px);
-		opacity: 1;
-	    visibility: visible;
-	}
+	
 
 	
 
