@@ -7,13 +7,14 @@ Copyright (c) 2016 Seductoras TEAM Todos los derechos reservados.
 */
 var parentBody = window.parent.document.body;
 $(function() {
-	$('input#nombre_a_publicar').keypress(function (e) {
-		var theVal = $(this).val()+String.fromCharCode(e.keyCode);
-		$(this).val(theVal.match(/([\ñ\Ñ\w\d\.\-\_\*\°\s])+/g));
-		e.preventDefault();
-	});
-
 	$('input#nombre_a_publicar').keyup(function() {
+		var reg = /^([a-z0-9 ñáéíóú´.*]{1,15})$/i;
+		if (!reg.test($(this).val())) $(this).val($(this).val().match(/[ÁÉÍÓÚáéíóúñÑ\w\d\.\*\s]+/g));
+
+		// if (e.keyCode != 16 && e.keyCode != 9 && e.keyCode != 27 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40)
+		// 	$(this).val($(this).val().match(/[ÁÉÍÓÚáéíóúñÑ\w\d\.\-\_\*\s]+/g));
+			// $(this).val($(this).val().match(/([\ñ\Ñ\w\d\.\-\_\*\s])+/g));
+
 		if ($.trim($('input#nombre_a_publicar').val()) == '') {
 			document.getElementById('verifyName').className = 'notEmpty';
 			return false;
@@ -43,7 +44,8 @@ $(function() {
 		}else $('select#ciu').html('<option value="0">-----</option>');
 	});
 
-	$('#telefono').mask('(99) 9999-9999').change(function() {
+	var telch = $('#telefono').val().substring(0, 3);
+	$('#telefono').mask(telch == '(55' || telch == '(33' || telch == '(81'?'(99) 9999-9999':'(999) 999-9999').change(function() {
 		var ftl = $(this).val().substring(0, 3);
 		if (ftl == '(55' || ftl == '(33' || ftl == '(81') $(this).mask('(99) 9999-9999');
 		else $(this).mask('(999) 999-9999');
@@ -61,15 +63,14 @@ $(function() {
 	$('#MpanelData').submit(function(e) {
 		e.preventDefault();
 
-		console.log($('#ciu').val());
-
 		/* ----------------------------------------------------------------------
 			Verifico que los campos obligatorios no estén vacíos
 		*/
 		var tok = true;
 		[['nombre_a_publicar', 'El nombre a publicar en tu perfil es obligatorio', ''], ['telefono', 'El número de teléfono en tu perfil es obligatorio', ''], ['edo', 'Selecciona el Estado donde te encuentras', '0'], ['ciu', 'Selecciona la Ciudad o Población donde te encuentras', '0']].forEach(function(ar) {
 			if ($.trim($('#'+ar[0]).val()) == ar[2]) {
-				alert(ar[1]);
+				bootbox.alert(ar[1]);
+				// alert(ar[1]);
 				$('#'+ar[0]).focus();
 				tok = false;
 			}
@@ -84,8 +85,6 @@ $(function() {
 				$('#nombre_a_publicar').focus();
 				return;
 			}
-
-
 			$(parentBody).removeClass('modalPanel');
 			// $('#detalles', parentBody).html(d.gen);
 			console.log(d);
