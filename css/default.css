@@ -230,15 +230,22 @@ a{text-decoration: none;}
   margin-right: auto;
 }
 
-.hidden{display: none;}
+.hidden{display: none !important;}
 
 .btn-default{
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
-
 .btn-default:hover{background-color: #EEEEEE;}
+
+.btn-primary{
+  color: #FFFFFF;
+  background-color: #9d0532;
+  border-color: #65001E; 
+}
+.btn-primary:hover{background-color: #790023;}
+
 
 .form-control{
   background-color: #FFFFFF;
