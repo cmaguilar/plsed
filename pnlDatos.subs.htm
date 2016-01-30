@@ -10,7 +10,7 @@
 				<div class="col-sm-5 col-xs-15">
 					<label>* Nombre a mostrar:</label>
 					<div id="verifyName">
-						<input name="nombre_a_publicar" id="nombre_a_publicar" type="text" class="form-control valida" value="{$NOMBRE_A_PUBLICAR}" style="font-weight: bold;">
+						<input name="nombre_a_publicar" id="nombre_a_publicar" type="text" class="form-control valida" value="{$NOMBRE_A_PUBLICAR}" style="font-weight: bold;" autocomplete="off">
 						<i class="fa fa-check"></i>
 						<i class="fa fa-times"></i>
 						<span><i class="fa fa-spinner"></i> verificando nombre disponible</span>
@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-sm-5 col-xs-15">
 					<label>* Teléfono:</label>
-					<input type="tel" id="telefono" name="telefono" class="form-control" value="{$TELEFONO}" {$TELREADONLY}>
+					<input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Número de 10 dígitos" value="{$TELEFONO}" {$TELREADONLY}>
 				</div>
 				<div class="col-sm-5 col-xs-15">
 					<label>Status:</label>
@@ -30,14 +30,14 @@
 			<div class="row">
 				<div class="col-sm-25 col-xs-15">
 					<label>* Estado:</label>
-					<select class="form-control" id="estado" name="estado">
+					<select class="form-control" id="edo" name="edo">
 						<option value="0">selecciona ...</option>
 						{$ESTADOS}
 					</select>
 				</div>
 				<div class="col-sm-25 col-xs-15">
 					<label>* Ciudad:</label>
-					<select class="form-control" id="ciudad" name="ciudad">
+					<select class="form-control" id="ciu" name="ciu">
 						<option value="0">selecciona ...</option>
 						{$CIUDADES}
 					</select>

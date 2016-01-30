@@ -31,41 +31,67 @@ $(function() {
 		}
 	});
 
-	$('select#estado').change(function() {
+	$('select#edo').change(function() {
 		if ($(this).val() > 0) {
-			$('select#ciudad').html('<option value="0">cargando ...</option>');
+			$('select#ciu').html('<option value="0">cargando ...</option>');
 			$.post('./?j=eCius', {edo: $(this).val()}, function(d){
-				$('select#ciudad').html('<option value="0">selecciona ...</option>');
+				$('select#ciu').html('<option value="0">selecciona ...</option>');
 				$.each(d, function(i, v) {
-					$('select#ciudad').append('<option value="'+v[0]+'">'+v[1]+'</option>');
+					$('select#ciu').append('<option value="'+v[0]+'">'+v[1]+'</option>');
 				});
-	    	});
-		}else $('select#ciudad').html('<option val="0">-----</option>');
+			});
+		}else $('select#ciu').html('<option value="0">-----</option>');
 	});
 
-	$('#telefono').mask("(99) 9999-9999").change(function() {
+	$('#telefono').mask('(99) 9999-9999').change(function() {
 		var ftl = $(this).val().substring(0, 3);
-		if (ftl == '(55' || ftl == '(33' || ftl == '(81') $(this).mask("(99) 9999-9999");
-		else $(this).mask("(999) 999-9999");
+		if (ftl == '(55' || ftl == '(33' || ftl == '(81') $(this).mask('(99) 9999-9999');
+		else $(this).mask('(999) 999-9999');
 	});
 
-	$('#estatura').mask("9.99 mts", {autoclear: false});
-	$('#peso').mask("999 kgs", {autoclear: false});
-	$('#busto').mask("999 cms", {autoclear: false});
-	$('#cintura').mask("999 cms", {autoclear: false});
-	$('#cadera').mask("999 cms", {autoclear: false});
+	$('#estatura').mask('9.99 mts', {autoclear: false});
+	$('#peso').mask('999 kgs', {autoclear: false});
+	$('#busto').mask('999 cms', {autoclear: false});
+	$('#cintura').mask('999 cms', {autoclear: false});
+	$('#cadera').mask('999 cms', {autoclear: false});
 
+	/* ----------------------------------------------------------------------
+		Submiteando el formulario ...
+	*/
 	$('#MpanelData').submit(function(e) {
 		e.preventDefault();
 
+		console.log($('#ciu').val());
+
+		/* ----------------------------------------------------------------------
+			Verifico que los campos obligatorios no estén vacíos
+		*/
+		var tok = true;
+		[['nombre_a_publicar', 'El nombre a publicar en tu perfil es obligatorio', ''], ['telefono', 'El número de teléfono en tu perfil es obligatorio', ''], ['edo', 'Selecciona el Estado donde te encuentras', '0'], ['ciu', 'Selecciona la Ciudad o Población donde te encuentras', '0']].forEach(function(ar) {
+			if ($.trim($('#'+ar[0]).val()) == ar[2]) {
+				alert(ar[1]);
+				$('#'+ar[0]).focus();
+				tok = false;
+			}
+		});
+		if (!tok) return false;
+
 		$('#sbmt').attr('disabled', 'disabled').html('...');
-		$.post('./?j=pnlDatos', $(this).serialize(), function(d) {
+		$.post('/?j=pnlDatos', $(this).serialize(), function(d) {
+			if (!d.nomPub) {
+				$('#sbmt').removeAttr('disabled').html('Hacer Cambios');
+				document.getElementById('verifyName').className = 'notAvailable';
+				$('#nombre_a_publicar').focus();
+				return;
+			}
+
+
 			$(parentBody).removeClass('modalPanel');
-			$('#detalles', parentBody).html(d.gen);
+			// $('#detalles', parentBody).html(d.gen);
 			console.log(d);
 			// bootbox.alert(d[0] == 'update'?'Se actualizó la información del usuario':'Se registró el usuario en el sistema', function() {
 			// 	location.href = '/?llv='+llv;
 			// });
-		}, "json");		
+		}, 'json');
 	});
 });
