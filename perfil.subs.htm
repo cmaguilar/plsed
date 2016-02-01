@@ -65,7 +65,7 @@
 
 			<!--========== DATOS Y FOTOS ===========-->
 			<div class="tx-c">
-				<h3 id="nombreTel">{$NOMBREAPUBLICAR}<br><small>{$TELEFONO}</small></h3>
+				<h3 id="nombreTel"><div>{$NOMBREAPUBLICAR}</div><small>{$TELEFONO}</small></h3>
 				<a href="#" onClick="window.open('/?a=pnlDatos&llv='+llvLg, 'socialIFrame');" id="edit-data" class="hi-x btn-circle">
 					<i class="fa fa-pencil fa-2x"></i>
 					<div>&nbsp;&nbsp;Editar datos</div>
@@ -268,3 +268,5 @@
 
 <TEMPLATE fotosMin>
 	<div class="mifoto"><img src="{$FOTOMIN}" data-href="{$FOTOHIGH}"></div></TEMPLATE>
+
+<TEMPLATE bundleJs><script type="text/javascript" src="/static/js/deta.bundle.js"></script></TEMPLATE>

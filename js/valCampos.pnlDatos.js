@@ -86,7 +86,9 @@ $(function() {
 				return;
 			}
 			$(parentBody).removeClass('modalPanel');
-			// $('#detalles', parentBody).html(d.gen);
+			$('#nombreTel>div', parentBody).html(d.nombre_a_publicar);
+			$('#nombreTel>small', parentBody).html(d.telefono);
+			$('#detalles', parentBody).html(d.generales);
 			console.log(d);
 			// bootbox.alert(d[0] == 'update'?'Se actualizó la información del usuario':'Se registró el usuario en el sistema', function() {
 			// 	location.href = '/?llv='+llv;
